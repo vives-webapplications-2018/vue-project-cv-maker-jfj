@@ -44,57 +44,79 @@
                         <div class="row">
                             <form class="col s12">
                                 <div v-show="show === 1" class="row">
-                                    <div class="input-field col s12">
+                                    <div class="input-field col s10">
                                         <input placeholder="First Name" id="first_name" type="text" class="validate">
                                         <label for="first_name">First Name</label>
                                     </div>
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                    </div>
                                 </div>
                                 <div v-show="show === 2" class="row">
-                                    <div class="input-field col s12">
+                                    <div class="input-field col s10">
                                         <input placeholder="Last Name" id="last_name" type="text" class="validate">
                                         <label for="last_name">Last Name</label>
                                     </div>
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                    </div>
                                 </div>
                                 <div v-show="show === 3" class="row">
-                                    <div class="input-field col s12">
+                                    <div class="input-field col s10">
                                         <input placeholder="Placeholder" id="birthdate" type="date" class="validate">
                                         <label for="dabirthdatete">Birthdate</label>
                                     </div>
-                                    
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                    </div> 
                                 </div>
                                 <div v-show="show === 4" class="row">
-                                    <div class="input-field col s12">
+                                    <div class="input-field col s10">
                                         <input placeholder="Email" id="email" type="email" class="validate">
                                         <label for="email">Email</label>
                                     </div>
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                    </div>
                                 </div>
                                 <div v-show="show === 5" class="row">
-                                    <div class="input-field col s12">
+                                    <div class="input-field col s10">
                                         <input placeholder="Phone number" id="phonenumber" type="text" class="validate">
                                         <label for="phonenumber">Phone number</label>
                                     </div>
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                    </div>
                                 </div>
                                 <div v-show="show === 6" class="row">
-                                    <div class="input-field col s12">
+                                    <div class="input-field col s10">
                                         <textarea placeholder="Education" id="Education" class="materialize-textarea"></textarea>
                                         <label for="Education">Education</label>
                                     </div>
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                    </div>
                                 </div>
                                 <div v-show="show === 7" class="row">
-                                    <div class="input-field col s12">
+                                    <div class="input-field col s10">
                                         <textarea placeholder="Previous Jobs" id="previousjobs" class="materialize-textarea"></textarea>
                                         <label for="previousjobs">Previous Jobs</label>
                                     </div>
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                    </div>
                                 </div>
                                 <div v-show="show === 8" class="row">
-                                    <div class="input-field col s12">
+                                    <div class="input-field col s10">
                                         <textarea placeholder="References" id="References" class="materialize-textarea"></textarea>
                                         <label for="References">References</label>
+                                    </div>
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
                                 <a href="https://goo.gl/maps/cLnRD73Rhzo">degree</a>
                             </form>
-                            <button v-on:click.prevent="show++">click</button>
                         </div>
                     </div>
                 </div>
