@@ -3,4 +3,10 @@ var app = new Vue({
     data: {
       show: 1
     },
+    methods: {
+      incrementStep: function(){
+        this.show++;
+      }
+
+    }
   })
