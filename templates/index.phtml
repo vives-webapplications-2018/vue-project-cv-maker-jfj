@@ -11,49 +11,115 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">     
     </head>
     <body>
-        <h1>CV-maker</h1>
-        <p>Create here your CV.</p>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Curriculum Vitae</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Info</a></li>
+        <li><a href="badges.html">Get started</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container">
         <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
+            <div>
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                    <span class="card-title">CV-maker</span>
+                    <p>Create here your CV.</p>
                     </div>
-                    <div class="input-field col s12">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                        <label for="disabled">Disabled</label>
+                    <div class="card-action">
+                    <a href="#">Get started</a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                    This is an inline input field:
-                        <div class="input-field inline">
-                            <input id="email_inline" type="email" class="validate">
-                            <label for="email_inline">Email</label>
-                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="First Name" id="first_name" type="text" class="validate">
+                                        <label for="first_name">First Name</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                                        <label for="last_name">Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Placeholder" id="birthdate" type="date" class="validate">
+                                        <label for="dabirthdatete">Birthdate</label>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Email" id="email" type="email" class="validate">
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Phone number" id="phonenumber" type="text" class="validate">
+                                        <label for="phonenumber">Phone number</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea placeholder="Education" id="Education" class="materialize-textarea"></textarea>
+                                        <label for="Education">Education</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea placeholder="Previous Jobs" id="previousjobs" class="materialize-textarea"></textarea>
+                                        <label for="previousjobs">Previous Jobs</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea placeholder="References" id="References" class="materialize-textarea"></textarea>
+                                        <label for="References">References</label>
+                                    </div>
+                                </div>
+                                <a href="https://goo.gl/maps/cLnRD73Rhzo">degree</a>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Curriculum Vitae</h5>
+                <p class="grey-text text-lighten-4">This site is made possible by the slim framework, Vue.JS, materialize.</p>
+                <p class="grey-text text-lighten-4">You can view our code on our GiHub.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.slimframework.com/" target="_blank">Slim Framework</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://vuejs.org/" target="_blank">Vue JS</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://materializecss.com/" target="_blank">Materialize</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/vives-webapplications-2018/vue-project-cv-maker-jfj" target="_blank">GitHub</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 JFJ
+            </div>
+          </div>
+        </footer>
     </body>
 </html>
