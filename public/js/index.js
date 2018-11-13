@@ -1,6 +1,6 @@
 var app = new Vue({
     el: '#app',
     data: {
-      show: 1,
+      show: 1
     },
   })
