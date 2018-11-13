@@ -22,8 +22,9 @@
       </ul>
     </div>
   </nav>
+  <div style="margin:150px;" id="app">
     <div class="container">
-        <div class="row">
+        <div v-show="show === 1" class="row">
             <div>
                 <div class="card blue-grey lighten-3">
                     <div class="card-content white-text">
@@ -31,7 +32,7 @@
                     <p>Create here your CV.</p>
                     </div>
                     <div class="card-action">
-                    <button class="btn waves-effect waves-light white-tex #37474f blue-grey darken-3" type="submit" name="action">Get started
+                    <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light white-tex #37474f blue-grey darken-3" type="submit" name="action">Get started
                         <i class="material-icons right">send</i>
                     </button>
                     </div>
@@ -39,13 +40,13 @@
             </div>
         </div>
     </div>
-    <div id="app" class="container">
+    <div class="container">
         <div class="container">
             <div class="row">
                     <form class="col s12">
                         <div class="row">
                             <form class="col s12">
-                                <div v-show="show === 1" class="row">
+                                <div v-show="show === 2" class="row">
                                     <div class="input-field col s10">
                                         <input placeholder="First Name" id="first_name" type="text" class="validate">
                                         <label for="first_name">First Name</label>
@@ -54,7 +55,7 @@
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
-                                <div v-show="show === 2" class="row">
+                                <div v-show="show === 3" class="row">
                                     <div class="input-field col s10">
                                         <input placeholder="Last Name" id="last_name" type="text" class="validate">
                                         <label for="last_name">Last Name</label>
@@ -63,7 +64,7 @@
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
-                                <div v-show="show === 3" class="row">
+                                <div v-show="show === 4" class="row">
                                     <div class="input-field col s10">
                                         <input placeholder="Placeholder" id="birthdate" type="date" class="validate">
                                         <label for="dabirthdatete">Birthdate</label>
@@ -72,7 +73,7 @@
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div> 
                                 </div>
-                                <div v-show="show === 4" class="row">
+                                <div v-show="show === 5" class="row">
                                     <div class="input-field col s10">
                                         <input placeholder="Email" id="email" type="email" class="validate">
                                         <label for="email">Email</label>
@@ -81,7 +82,7 @@
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
-                                <div v-show="show === 5" class="row">
+                                <div v-show="show === 6" class="row">
                                     <div class="input-field col s10">
                                         <input placeholder="Phone number" id="phonenumber" type="text" class="validate">
                                         <label for="phonenumber">Phone number</label>
@@ -90,7 +91,7 @@
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
-                                <div v-show="show === 6" class="row">
+                                <div v-show="show === 7" class="row">
                                     <div class="input-field col s10">
                                         <textarea placeholder="Education" id="Education" class="materialize-textarea"></textarea>
                                         <label for="Education">Education</label>
@@ -99,7 +100,7 @@
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
-                                <div v-show="show === 7" class="row">
+                                <div v-show="show === 8" class="row">
                                     <div class="input-field col s10">
                                         <textarea placeholder="Previous Jobs" id="previousjobs" class="materialize-textarea"></textarea>
                                         <label for="previousjobs">Previous Jobs</label>
@@ -108,7 +109,7 @@
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
-                                <div v-show="show === 8" class="row">
+                                <div v-show="show === 9" class="row">
                                     <div class="input-field col s10">
                                         <textarea placeholder="References" id="References" class="materialize-textarea"></textarea>
                                         <label for="References">References</label>
@@ -123,6 +124,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     <footer class="page-footer #37474f blue-grey darken-3">
           <div class="container">
