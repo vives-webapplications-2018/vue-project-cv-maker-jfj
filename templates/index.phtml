@@ -118,7 +118,14 @@
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
-                                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1vRGbChXk1-kKOMqll14RbZ3lzSL2XW6t" width="640" height="480"></iframe>
+                                <div v-show="show === 10" class="row">
+                                    <div class="input-field col s10">
+                                        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1vRGbChXk1-kKOMqll14RbZ3lzSL2XW6t" width="640" height="480"></iframe>
+                                    </div>
+                                    <div class="col s2">
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
