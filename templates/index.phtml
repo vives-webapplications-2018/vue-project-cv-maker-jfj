@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Slim 3</title>
+        <title>CV maker</title>
         <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -29,7 +29,7 @@
                 <div class="card blue-grey lighten-3">
                     <div class="card-content white-text">
                     <span class="card-title">CV-maker</span>
-                    <p>Create here your CV.</p>
+                    <p>Create your CV here.</p>
                     </div>
                     <div class="card-action">
                     <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light white-tex #37474f blue-grey darken-3" type="submit" name="action">Get started
@@ -67,7 +67,7 @@
                                 <div v-show="show === 4" class="row">
                                     <div class="input-field col s10">
                                         <input placeholder="Placeholder" id="birthdate" type="date" class="validate">
-                                        <label for="dabirthdatete">Birthdate</label>
+                                        <label for="birthdate">Birthdate</label>
                                     </div>
                                     <div class="col s2">
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
@@ -93,8 +93,8 @@
                                 </div>
                                 <div v-show="show === 7" class="row">
                                     <div class="input-field col s10">
-                                        <textarea placeholder="Education" id="Education" class="materialize-textarea"></textarea>
-                                        <label for="Education">Education</label>
+                                        <textarea placeholder="Education" id="education" class="materialize-textarea"></textarea>
+                                        <label for="education">Education</label>
                                     </div>
                                     <div class="col s2">
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
@@ -111,8 +111,8 @@
                                 </div>
                                 <div v-show="show === 9" class="row">
                                     <div class="input-field col s10">
-                                        <textarea placeholder="References" id="References" class="materialize-textarea"></textarea>
-                                        <label for="References">References</label>
+                                        <textarea placeholder="References" id="references" class="materialize-textarea"></textarea>
+                                        <label for="references">References</label>
                                     </div>
                                     <div class="col s2">
                                         <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
