@@ -9,12 +9,15 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>     
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="css/red.css" />   
     </head>
-    <body>
+    <body style="background-color: #eeeeee">
     <nav>
-    <div class="nav-wrapper #37474f blue-grey darken-3">
-      <a href="#" class="brand-logo">Curriculum Vitae</a>
+    <div class="nav-wrapper #616161 grey darken-2">
+      <a href="#" src="img/CVmaker-logo.png"class="brand-logo"><img src="img/CVmaker-logo.png" alt="" style="margin:10px"></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">Info</a></li>
         <li><a href="#">Get started</a></li>
@@ -22,17 +25,17 @@
       </ul>
     </div>
   </nav>
-  <div style="margin:150px;" id="app">
+  <div style="margin:150px" id="app">
     <div class="container">
         <div v-show="show === 1" class="row">
             <div>
-                <div class="card blue-grey lighten-3">
+                <div class="card #616161 grey darken-2">
                     <div class="card-content white-text">
                     <span class="card-title">CV-maker</span>
                     <p>Create your CV here.</p>
                     </div>
                     <div class="card-action">
-                    <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light white-tex #37474f blue-grey darken-3" type="submit" name="action">Get started
+                    <button v-on:click.prevent="incrementStep" class="btn waves effect red darken-1 white-tex" type="submit" name="action" style="boreder-bottom: red darken-1">Get started
                         <i class="material-icons right">send</i>
                     </button>
                     </div>
@@ -52,7 +55,7 @@
                                         <label for="first_name">First Name</label>
                                     </div>
                                     <div class="col s2">
-                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect red darken-1"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
                                 <div v-show="show === 3" class="row">
@@ -61,7 +64,7 @@
                                         <label for="last_name">Last Name</label>
                                     </div>
                                     <div class="col s2">
-                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect red darken-1"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
                                 <div v-show="show === 4" class="row">
@@ -70,7 +73,7 @@
                                         <label for="birthdate">Birthdate</label>
                                     </div>
                                     <div class="col s2">
-                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect red darken-1"><i class="material-icons">arrow_forward</i></a>
                                     </div> 
                                 </div>
                                 <div v-show="show === 5" class="row">
@@ -79,7 +82,7 @@
                                         <label for="email">Email</label>
                                     </div>
                                     <div class="col s2">
-                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect red darken-1"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
                                 <div v-show="show === 6" class="row">
@@ -88,7 +91,7 @@
                                         <label for="phonenumber">Phone number</label>
                                     </div>
                                     <div class="col s2">
-                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect red darken-1"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
                                 <div v-show="show === 7" class="row">
@@ -97,7 +100,7 @@
                                         <label for="education">Education</label>
                                     </div>
                                     <div class="col s2">
-                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect red darken-1"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
                                 <div v-show="show === 8" class="row">
@@ -106,7 +109,7 @@
                                         <label for="previousjobs">Previous Jobs</label>
                                     </div>
                                     <div class="col s2">
-                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect red darken-1"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
                                 <div v-show="show === 9" class="row">
@@ -115,7 +118,7 @@
                                         <label for="references">References</label>
                                     </div>
                                     <div class="col s2">
-                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+                                        <a v-on:click.prevent="incrementStep" class="right btn-floating btn-large waves-effect red darken-1"><i class="material-icons">arrow_forward</i></a>
                                     </div>
                                 </div>
                                 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1vRGbChXk1-kKOMqll14RbZ3lzSL2XW6t" width="640" height="480"></iframe>
@@ -126,13 +129,14 @@
             </div>
         </div>
         </div>
-    <footer class="page-footer #37474f blue-grey darken-3">
+    <footer class="page-footer #616161 grey darken-2">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="white-text">Curriculum Vitae</h5>
                 <p class="white-text">This site is made possible by the slim framework, Vue.JS, materialize.</p>
                 <p class="white-text">You can view our code on our GitHub.</p>
+                <a><img src="img/JFJ-logo.png"></a>
               </div>
               <div class="col l2 offset-l4">
                 <h5 class="white-text">Links</h5>
