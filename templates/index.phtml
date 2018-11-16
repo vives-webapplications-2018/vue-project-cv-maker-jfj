@@ -117,6 +117,61 @@
                     </form>
                 </div>
             </div>
+            <div v-show="show === 3" class="row">
+              <div class="col s12 m12">
+                <form>
+                    <div class="card">
+                        <div class="card-content">
+                        <span class="card-title"><h4>Education</h4></span>
+                            <div class = "row">
+                                <div class="input-field col s6">
+                                    <input id="Education" type="text" class="validate">
+                                    <label for="Education">Education:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="Place" type="text" class="validate">
+                                    <label for="Place">Place:</label>
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class="input-field col s12">
+                                    <input id="Institution" type="text" class="validate">
+                                    <label for="Institution">Educational institution:</label>
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class="input-field col s6">
+                                    <input id="StartEdu" type="date" class="validate">
+                                    <label for="StartEdu">From:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="EndEdu" type="date" class="validate">
+                                    <label for="EndEdu">Until:</label>
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class="input-field col s12">
+                                    <textarea id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                    <label for="Postal">Additional information:</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class= "row">
+                        <div class="input-field col s6">
+                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Back
+                                <i class="material-icons right">send</i>
+                            </button>
+                            </div>
+                            <div class="input-field col s6">
+                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Next
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="page-footer #37474f blue-grey darken-3">
