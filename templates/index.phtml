@@ -11,9 +11,9 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>     
     </head>
-    <body class="#fafafa grey lighten-5">
+    <body class="grey lighten-3">
     <nav>
-    <div class="nav-wrapper #37474f blue-grey darken-3">
+    <div class="nav-wrapper light-blue darken-4">
       <a href="#" class="brand-logo">Curriculum Vitae</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">Info</a></li>
@@ -24,18 +24,38 @@
   </nav>
   <div style="margin-top:30px;" id="app">
     <div class="container">
-    <div class="container">
-        <div v-show="show === 1" class="row">
-            <div>
-                <div class="card blue-grey lighten-3">
-                    <div class="card-content white-text">
-                    <span class="card-title">CV-maker</span>
-                    <p>Create your CV here.</p>
-                    </div>
+        <div class="container">
+            <div v-show="show === 1" class="row">
+                <div>
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title"><h2>JFJ CV-maker</h2></span>
+                            <h4>3 Steps to make your CV!</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col s4">
+                                <div class="center promo promo-example"style="margin-top:50px">
+                                    <i class="large material-icons red-text">account_circle</i>
+                                    <h5 class="promo-caption"style="margin-top:50px">1. Personal information</h5>
+                                </div> 
+                            </div>
+                            <div class="col s4">
+                                <div class="center promo promo-example" style="margin-top:50px">
+                                    <i class="large material-icons red-text">flash_on</i>
+                                    <h5 class="promo-caption"style="margin-top:50px">2. Skills</h5>
+                                </div>
+                            </div>
+                            <div class="col s4">
+                                <div class="center promo promo-example"style="margin-top:50px">
+                                    <i class="large material-icons red-text">cloud_download</i>
+                                    <h5 class="promo-caption"style="margin-top:50px">3. Get your CV!</h5>
+                                </div>
+                            </div>
+                        </div>
                     <div class="card-action">
-                    <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light white-tex #37474f blue-grey darken-3" type="submit" name="action">Get started
-                        <i class="material-icons right">send</i>
-                    </button>
+                        <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light red" type="submit" name="action">Get started
+                            <i class="material-icons right">send</i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -45,8 +65,8 @@
     <div class="container">
         <div class="container">
             <div v-show="show === 2" class="row">
-                <div class="progress">
-                    <div class="determinate" style="width: 20%"></div>
+                <div class="progress red lighten-3">
+                    <div class="determinate red" style="width: 20%"></div>
                 </div>
                 <div class="col s12 m12">
                 <form>
@@ -107,12 +127,12 @@
                     </div>
                     <div class= "row">
                         <div class="input-field col s6">
-                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Back
+                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Back
                                 <i class="material-icons right">send</i>
                             </button>
                             </div>
                             <div class="input-field col s6">
-                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Next
+                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Next
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -121,8 +141,8 @@
                 </div>
             </div>
             <div v-show="show === 3" class="row">
-            <div class="progress">
-                    <div class="determinate" style="width: 40%"></div>
+            <div class="progress red lighten-3">
+                    <div class="determinate red" style="width: 40%"></div>
                 </div>
               <div class="col s12 m12">
                 <form>
@@ -165,12 +185,12 @@
                     </div>
                     <div class= "row">
                         <div class="input-field col s6">
-                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Back
+                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Back
                                 <i class="material-icons right">send</i>
                             </button>
                             </div>
                             <div class="input-field col s6">
-                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Next
+                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Next
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -179,8 +199,8 @@
                 </div>
             </div>
             <div v-show="show === 4" class="row">
-            <div class="progress">
-                    <div class="determinate" style="width: 60%"></div>
+            <div class="progress red lighten-3">
+                    <div class="determinate red" style="width: 60%"></div>
                 </div>
               <div class="col s12 m12">
                 <form>
@@ -223,12 +243,12 @@
                     </div>
                     <div class= "row">
                         <div class="input-field col s6">
-                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Back
+                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Back
                                 <i class="material-icons right">send</i>
                             </button>
                             </div>
                             <div class="input-field col s6">
-                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Next
+                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Next
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -237,8 +257,8 @@
                 </div>
             </div>
             <div v-show="show === 5" class="row">
-            <div class="progress">
-                    <div class="determinate" style="width: 80%"></div>
+            <div class="progress red lighten-3">
+                    <div class="determinate red" style="width: 80%"></div>
                 </div>
               <div class="col s12 m12">
                 <form>
@@ -290,12 +310,12 @@
                     </div>
                     <div class= "row">
                         <div class="input-field col s6">
-                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Back
+                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Back
                                 <i class="material-icons right">send</i>
                             </button>
                             </div>
                             <div class="input-field col s6">
-                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Next
+                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Next
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -305,7 +325,7 @@
             </div>
             <div v-show="show === 6" class="row">
             <div class="progress">
-                    <div class="determinate" style="width: 100%"></div>
+                    <div class="determinate red" style="width: 100%"></div>
                 </div>
               <div class="col s12 m12">
                 <form>
@@ -340,12 +360,12 @@
                     </div>
                     <div class= "row">
                         <div class="input-field col s6">
-                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Back
+                            <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Back
                                 <i class="material-icons right">send</i>
                             </button>
                             </div>
                             <div class="input-field col s6">
-                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12" type="submit" name="action">Next
+                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red" type="submit" name="action">Next
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -355,7 +375,7 @@
             </div>
         </div>
     </div>
-    <footer class="page-footer #37474f blue-grey darken-3">
+    <footer class="page-footer light-blue darken-4">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
