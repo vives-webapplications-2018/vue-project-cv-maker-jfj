@@ -6,6 +6,9 @@ var app = new Vue({
     methods: {
       incrementStep: function(){
         this.show++;
+      },
+      decrementStep: function(){
+        this.show--;
       }
 
     }
