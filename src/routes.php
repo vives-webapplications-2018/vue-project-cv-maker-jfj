@@ -16,6 +16,11 @@ $app->get('/info', function (Request $request, Response $response, array $args) 
     // Render index view
     return $this->renderer->render($response, 'info.phtml', $args);
 });
+$app->get('/getstarted', function (Request $request, Response $response, array $args) {
+
+    // Render index view
+    return $this->renderer->render($response, 'getstarted.phtml', $args);
+});
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     // Sample log message
     $this->logger->info("Slim-Skeleton '/' route");
