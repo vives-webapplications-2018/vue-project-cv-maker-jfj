@@ -12,8 +12,9 @@ use \App\Models\Otherskill;
 
 // Routes
 $app->get('/info', function (Request $request, Response $response, array $args) {
-
-    // Render index view
+    this->logger->info("GET /info");
+    
+    // Render info view
     return $this->renderer->render($response, 'info.phtml', $args);
 });
 $app->get('/getstarted', function (Request $request, Response $response, array $args) {
@@ -27,15 +28,13 @@ $app->get('/aboutus', function (Request $request, Response $response, array $arg
     return $this->renderer->render($response, 'aboutus.phtml', $args);
 });
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
+    $this->logger->info("GET /");
 
     // Render index view
     return $this->renderer->render($response, 'index.phtml', $args);
 });
 
 $app->post('/cvs', function (Request $request, Response $response, array $args) {
-    // Sample log message
     $this->logger->info("POST /cvs");
 
     $address = new Address();
@@ -87,6 +86,6 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $user->otherskills_id = $otherskill->id;
     $user->save();
     
-    // Render index view
+    // Render overview view
     return $this->renderer->render($response, 'overview.phtml', $args);
 });
