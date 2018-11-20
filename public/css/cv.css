@@ -8,7 +8,7 @@ body {
 }
 aside.left {
     float: left;
-    width: 300px;
+    width: 300  px;
     font-size: 100%;
     font-style: italic;
     font-family: Georgia, Times, serif;
@@ -20,22 +20,9 @@ aside.left {
   }
 section{
     float: right;
-    width: 1550px;
+    width: 800px;
+    
     text-align: left;
-}
-figure{
-    float: right;
-}
-article{
-    border-bottom: 2px solid #665544;
-}
-
-th.blauw{
-    background-color: #67869a;
-}
-th.negatief{
-    background-color: #FFC7C2;
-    color: #990000;
 }
 
 h1{
@@ -43,7 +30,7 @@ h1{
     color: #67869a;
 }
 h2{
-    font-size: 24px;
+    font-size: 28px;
     color: #67869a;
 }
 p{
@@ -52,36 +39,33 @@ p{
     margin-left: 10px;
 }
 p.school{
+    font-size: 24px;
     color: #000000;
 }
 p.richting{
+    font-size: 24px;
     color: #990000;
 }
-table{
-    text-align: center;
-    width: 350px;
+
+p.job{
+    font-size: 24px;
+    color: #000000;
 }
-li.groot{
-    font-size: 42px;
-}
-li.hoofd{
+p.werkplaats{
+    font-size: 24px;
     color: #990000;
-    font-size: 72px;
-    padding-bottom: 0px;
 }
-article li{
-    display: inline-block;
-    padding: 10px;
+
+p.certificaat{
+    font-size: 24px;
+    color: #000000;
 }
-article ul{
-    padding: 10px;
+p.cursus{
+    font-size: 24px;
+    color: #990000;
 }
-article ul.left{
-    float: left;
-}
-article ul.right{
-    float: right;
-}
-li.zwart{
-    color: black;
+div{
+    width: 1200px;
+    margin-left: 400px;
+    background-color: #000000;
 }
