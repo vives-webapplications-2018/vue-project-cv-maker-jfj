@@ -37,3 +37,18 @@
      box-shadow: none!important;
      background: #fff;
    }
+   [type="radio"]:checked + span:after,
+ 
+   [type="radio"].with-gap:checked + span:before,
+    
+   [type="radio"].with-gap:checked + span:after {
+    
+     border: 2px solid #F44336;
+}
+    
+   [type="radio"]:checked + span:after,
+    
+   [type="radio"].with-gap:checked + span:after {
+    
+     background-color: #F44336;  
+}
