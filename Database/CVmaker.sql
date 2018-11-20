@@ -57,6 +57,8 @@ CREATE TABLE Users (
   phonenumber int(11) NULL,
   birthdate date NOT NULL,
   birthplace varchar(32)NOT NULL,
+  githubusername varchar(64) NULL,
+  githubtoken varchar(64) NULL,
   addresses_id int(11) NULL,
   educations_id int(11) NULL,
   experiences_id int(11) NULL,

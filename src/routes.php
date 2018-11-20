@@ -9,6 +9,7 @@ use \App\Models\Computerskill;
 use \App\Models\Education;
 use \App\Models\Experience;
 use \App\Models\Otherskill;
+use \App\lib\GitHub;
 
 // Routes
 $app->get('/info', function (Request $request, Response $response, array $args) {
@@ -79,12 +80,15 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $user->phonenumber = $request->getParam('phonenumber');
     $user->birthdate = $request->getParam('birthdate');
     $user->birthplace = $request->getParam('birthplace');
+    $user->githubusername = $request->getParam('githubUsername');
+    $user->githubToken = $request->getParam('githubToken');
     $user->addresses_id = $address->id;
     $user->educations_id = $education->id;
     $user->experiences_id = $experience->id;
     $user->computerskills_id = $computerskill->id;
     $user->otherskills_id = $otherskill->id;
     $user->save();
+    
     
     // Render overview view
     return $this->renderer->render($response, 'overview.phtml', $args);
