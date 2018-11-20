@@ -12,7 +12,7 @@ use \App\Models\Otherskill;
 
 // Routes
 $app->get('/info', function (Request $request, Response $response, array $args) {
-    this->logger->info("GET /info");
+    $this->logger->info("GET /info");
     
     // Render info view
     return $this->renderer->render($response, 'info.phtml', $args);
