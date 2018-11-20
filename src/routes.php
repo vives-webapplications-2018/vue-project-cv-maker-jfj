@@ -28,6 +28,13 @@ $app->get('/aboutus', function (Request $request, Response $response, array $arg
     // Render index view
     return $this->renderer->render($response, 'aboutus.phtml', $args);
 });
+
+$app->get('/cv', function (Request $request, Response $response, array $args) {
+
+    // Render index view
+    return $this->renderer->render($response, 'cv.phtml', $args);
+});
+
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     $this->logger->info("GET /");
 
@@ -93,3 +100,5 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     // Render overview view
     return $this->renderer->render($response, 'overview.phtml', $args);
 });
+
+
