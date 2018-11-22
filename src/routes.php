@@ -4,12 +4,11 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use \App\Models\User;
 use \App\Models\Address;
-use \App\Models\City;
 use \App\Models\Computerskill;
 use \App\Models\Education;
 use \App\Models\Experience;
 use \App\Models\Otherskill;
-use \App\lib\GitHub;
+use \App\lib\GitHub\GitHub;
 
 // Routes
 $app->get('/info', function (Request $request, Response $response, array $args) {
@@ -45,6 +44,18 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $address->city = $request->getParam('city');
     $address->save();
 
+    $user = new User();
+    $user->firstname = $request->getParam('firstname');
+    $user->lastname = $request->getParam('lastname');
+    $user->email = $request->getParam('email');
+    $user->phonenumber = $request->getParam('phonenumber');
+    $user->birthdate = $request->getParam('birthdate');
+    $user->birthplace = $request->getParam('birthplace');
+    $user->githubusername = $request->getParam('githubUsername');
+    $user->githubtoken = $request->getParam('githubToken');
+    $user->addresses_id = $address->id;
+    $user->save();
+
     $education = new Education();
     $education->education = $request->getParam('education');
     $education->place = $request->getParam('placeEdu');
@@ -52,6 +63,7 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $education->fromEdu = $request->getParam('fromEdu');
     $education->untilEdu = $request->getParam('untilEdu');
     $education->information = $request->getParam('informationEdu');
+    $education->users_id = $user->id;
     $education->save();
 
     $experience = new Experience();
@@ -61,35 +73,31 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $experience->fromExp = $request->getParam('fromExp');
     $experience->untilExp = $request->getParam('untilExp');
     $experience->information = $request->getParam('informationExp');
+    $experience->users_id = $user->id;
     $experience->save();
 
     $computerskill = new Computerskill();
     $computerskill->skill = $request->getParam('computerskill');
     $computerskill->level = $request->getParam('computerlevel');
+    $computerskill->users_id = $user->id;
     $computerskill->save();
 
     $otherskill = new Otherskill();
     $otherskill->skill = $request->getParam('otherskill');
     $otherskill->level = $request->getParam('otherlevel');
+    $otherskill->users_id = $user->id;
     $otherskill->save();
 
-    $user = new User();
-    $user->firstname = $request->getParam('firstname');
-    $user->lastname = $request->getParam('lastname');
-    $user->email = $request->getParam('email');
-    $user->phonenumber = $request->getParam('phonenumber');
-    $user->birthdate = $request->getParam('birthdate');
-    $user->birthplace = $request->getParam('birthplace');
-    $user->githubusername = $request->getParam('githubUsername');
-    $user->githubToken = $request->getParam('githubToken');
-    $user->addresses_id = $address->id;
-    $user->educations_id = $education->id;
-    $user->experiences_id = $experience->id;
-    $user->computerskills_id = $computerskill->id;
-    $user->otherskills_id = $otherskill->id;
-    $user->save();
-    
-    
+    $github = new GitHub($user->githubusername,$user->githubtoken);
+    $githubdata = $github->getPercentage($github->getData());
+    foreach($githubdata as $language=>$value)
+    {
+        $githubskill = new Computerskill();
+        $githubskill->skill = $language;
+        $githubskill->level=$value;
+        $githubskill->users_id = $user->id;
+        $githubskill->save();
+    }
     // Render overview view
     return $this->renderer->render($response, 'overview.phtml', $args);
 });
