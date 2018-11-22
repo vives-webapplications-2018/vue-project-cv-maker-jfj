@@ -5,8 +5,7 @@ USE CVmaker;
 CREATE TABLE Addresses (
   id int(11) NOT NULL AUTO_INCREMENT,
   street varchar(40) NOT NULL,
-  city_zip int(11) NOT NULL,
-  nr int(11) NOT NULL,
+  nr varchar(16) NOT NULL,
   zip int(11) NULL,
   city varchar(32),
   PRIMARY KEY (id)
@@ -42,8 +41,8 @@ CREATE TABLE Education (
 
 CREATE TABLE Computerskills (
   id int(11) NOT NULL AUTO_INCREMENT,
-  skill varchar(32) NOT NULL,
-  level varchar(32) NOT NULL,
+  skill varchar(32) NULL,
+  level varchar(32) NULL,
   users_id int(11) NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (users_id) REFERENCES Users(id)
@@ -51,8 +50,8 @@ CREATE TABLE Computerskills (
 
 CREATE TABLE Otherskills (
   id int(11) NOT NULL AUTO_INCREMENT,
-  skill varchar(32) NOT NULL,
-  level ENUM('verygood','good','normal') NOT NULL,
+  skill varchar(32) NULL,
+  level ENUM('verygood','good','normal') NULL,
   users_id int(11) NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (users_id) REFERENCES Users(id)
