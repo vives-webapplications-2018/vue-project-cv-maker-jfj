@@ -184,7 +184,23 @@
                 <li>
                     <div class="collapsible-header"><i class="material-icons">whatshot</i>Computerskill</div>
                     <div class="collapsible-body">
-                        <span></span>
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach($githubdata as $language =>$value)
+                        {
+                            echo "<tr><td>" . $language . "</td><td>" . $value . "%" . "</td></tr>";
+                        }
+                        ?>
+
+                        </tbody>
+                    </table>
                     </div>
                 </li>
                 <li>
