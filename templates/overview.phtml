@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/collapsible.js"></script>
     <link rel="stylesheet" href="css/red.css" />
 </head>
 
@@ -27,7 +28,174 @@
             </ul>
         </div>
     </nav>
-
+    <div class="container" style="margin-top:30px;">
+        <div class="container">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Personal information</div>
+                    <div class="collapsible-body">
+                            <div class="col s12 m12">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $firstname ?> name="firstname" id="first_name" type="text" class="validate">
+                                                <label for="first_name">First name:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $lastname ?> name="lastname" id="last_name" type="text" class="validate">
+                                                <label for="last_name">Last name:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $email ?> name="email" id="Email" type="email" class="validate">
+                                                <label for="Email">E-mail:</label>
+                                                <span class="helper-text" data-error="Invalid e-mail!" data-success="Valid e-mail."></span>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $phonenumber ?> name="phonenumber" id="Phone" type="text" class="validate">
+                                                <label for="Phone">Phonenumber:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $streetname ?> name="street" id="Street" type="text" class="validate">
+                                                <label for="Street">Streetname:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $nr ?> name="nr" id="House" type="text" class="validate">
+                                                <label for="House">Housenumber:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $zip ?> name="zip" id="Postal" type="text" class="validate">
+                                                <label for="Postal">Postal code:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $city ?> name="city" id="City" type="text" class="validate">
+                                                <label for="City">City:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $birthdate ?> name="birthdate" id="Birth" type="Date" class="validate">
+                                                <label for="Birth">Birthdate:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $birthplace ?> name="birthplace" id="Birthplace" type="text" class="validate">
+                                                <label for="Birthplace">Birthplace:</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Education</div>
+                    <div class="collapsible-body">
+                    <div class="col s12 m12">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $education ?> name="education" id="Education" type="text" class="validate">
+                                                <label for="Education">Education:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $placeEdu ?> name="placeEdu" id="Place" type="text" class="validate">
+                                                <label for="Place">Place:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input value =<?= $institute ?> name="institute" id="Institution" type="text" class="validate">
+                                                <label for="Institution">Educational institution:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $fromEdu ?> name="fromEdu" id="StartEdu" type="date" class="validate">
+                                                <label for="StartEdu">From:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $untilEdu ?> name="untilEdu" id="EndEdu" type="date" class="validate">
+                                                <label for="EndEdu">Until:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <textarea value =<?= $informationEdu ?> name="informationEdu" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                                <label for="AdditionalInfoEdu">Additional information:</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Experience</div>
+                    <div class="collapsible-body">
+                    <div class="col s12 m12">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <span class="card-title">
+                                            <h4>Experience</h4>
+                                        </span>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $functionExp ?> name="functionExp" id="Function" type="text" class="validate">
+                                                <label for="Funcion">Function:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $placeExp ?> name="placeExp" id="Place" type="text" class="validate">
+                                                <label for="Place">Place:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input value =<?= $employer ?> name="employer" id="Employer" type="text" class="validate">
+                                                <label for="Employer">Employer:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input value =<?= $fromExp ?> name="fromExp" id="StartExp" type="date" class="validate">
+                                                <label for="StartExp">From:</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input value =<?= $untilExp ?> name="untilExp" id="EndExp" type="date" class="validate">
+                                                <label for="EndExp">Until:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <textarea value =<?= $informationExp ?> name="informationExp" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                                <label for="AdditionalInfoEdu">Additional information:</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Computerskill</div>
+                    <div class="collapsible-body">
+                        <span></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Other skill</div>
+                    <div class="collapsible-body">
+                        <span></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
     <footer class="page-footer light-blue darken-4">
         <div class="container">
             <div class="row">
