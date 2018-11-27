@@ -73,21 +73,43 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $user->addresses_id = $address->id;
     $user->save();
 
-    $education = new Education();
-    $education->education = $request->getParam('education');
-    $args['education'] = $education->education;
-    $education->place = $request->getParam('placeEdu');
-    $args['placeEdu'] = $education->place;
-    $education->institute = $request->getParam('institute');
-    $args['institute'] = $education->institute;
-    $education->fromEdu = $request->getParam('fromEdu');
-    $args['fromEdu'] = $education->fromEdu;
-    $education->untilEdu = $request->getParam('untilEdu');
-    $args['untilEdu'] = $education->untilEdu;
-    $education->information = $request->getParam('informationEdu');
-    $args['informationEdu'] = $education->informationEdu;
-    $education->users_id = $user->id;
-    $education->save();
+
+    
+    $educationarray = array();
+    $educations= $request->getParam('education');
+    $places = $request->getParam('placeEdu');
+    $institutes = $request->getParam('institute');
+    $fromEdus = $request->getParam('fromEdu');
+    $untilEdus = $request->getParam('untilEdu');
+    $informations = $request->getParam('informationEdu');
+
+    for($i=0;$i<count($educations);$i++){
+        $arr['educations'] = $educations[$i];
+        $arr['places'] = $places[$i];
+        $arr['institutes'] = $institutes[$i];
+        $arr['fromEdus'] = $fromEdus[$i];
+        $arr['untilEdus'] = $untilEdus[$i];
+        $arr['informations'] = $informations[$i];
+        array_push($educationarray,$arr);
+    }
+    foreach($educationarray as $key => $value){ 
+        $education = new Education();
+        $education->education = $value['educations'];
+        $education->place = $value['places'];
+        $education->institute = $value['institutes'];
+        $education->fromEdu = $value['fromEdus'];
+        $education->untilEdu = $value['untilEdus'];
+        $education->information = $value['informations'];
+        $education->users_id = $user->id;
+        $education->save();
+        $args['education'] = $education->education;
+        $args['placeEdu'] = $education->place;
+        $args['institute'] = $education->institute;
+        $args['fromEdu'] = $education->fromEdu;
+        $args['untilEdu'] = $education->untilEdu;
+        $args['informationEdu'] = $education->informationEdu;
+    }
+    
 
     $experience = new Experience();
     $experience->functionExp = $request->getParam('functionExp');
