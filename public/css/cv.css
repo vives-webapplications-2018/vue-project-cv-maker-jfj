@@ -8,6 +8,7 @@ body {
 }
 aside.left {
     float: left;
+    background-color: #E6E6E6;
     width: 300  px;
     font-size: 100%;
     font-style: italic;
@@ -21,8 +22,11 @@ aside.left {
 section{
     float: right;
     width: 800px;
-    
     text-align: left;
+}
+
+h1.aside{
+    color: #000000;
 }
 
 h1{
@@ -64,8 +68,14 @@ p.cursus{
     font-size: 24px;
     color: #990000;
 }
+p.datum{
+    float: right;
+    display: inline;
+}
 div{
     width: 1200px;
-    margin-left: 400px;
-    background-color: #000000;
+    margin-left: 400px;   
+}
+section.uitleg{
+    padding-top: 50px;
 }

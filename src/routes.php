@@ -34,6 +34,34 @@ $app->get('/cv', function (Request $request, Response $response, array $args) {
     return $this->renderer->render($response, 'cv.phtml', $args);
 });
 
+$app->get('/createcv', function (Request $request, Response $response, array $args) {
+    $api_endpoint = "https://selectpdf.com/api2/convert/";
+    $key = '84e33984-bb8a-46c1-89ca-f1f184de52c9';
+    $test_url = 'https://nl.lipsum.com/';
+    $local_file = 'cvs/test41.pdf';
+ 
+    $parameters = array ('key' => $key, 'url' => $test_url);
+    // Sample GET
+    
+    $result = @file_get_contents("$api_endpoint?" . http_build_query($parameters));
+    
+    if (!$result) {	
+        echo "HTTP Response: " . $http_response_header[0] . "<br/>";
+    
+        $error = error_get_last();
+        echo "Error Message: " . $error['message'];
+    }
+    else {
+        // Write on file
+        file_put_contents($local_file, $result);
+        //echo "HTTP Response: " . $http_response_header[0] . "<br/>";
+    }
+    return $this->renderer->render($response, 'cv.phtml', $args);
+
+    // Render index view
+    //return $this->renderer->render($response, 'index.phtml', $args);
+});
+
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     $this->logger->info("GET /");
 
