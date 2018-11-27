@@ -107,7 +107,9 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
 
     $computerskill = new Computerskill();
     $computerskill->skill = $request->getParam('computerskill');
+    $args['computerskill'] = $computerskill->skill;
     $computerskill->level = $request->getParam('computerlevel');
+    $args['computerlevel'] = $computerskill->level;
     $computerskill->users_id = $user->id;
     $computerskill->save();
 
@@ -119,6 +121,7 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
 
     $github = new GitHub($user->githubusername,$user->githubtoken);
     $githubdata = $github->getPercentage($github->getData());
+    $args['githubdata'] = $githubdata;
     foreach($githubdata as $language=>$value)
     {
         $githubskill = new Computerskill();
@@ -126,7 +129,8 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
         $githubskill->level=$value;
         $githubskill->users_id = $user->id;
         $githubskill->save();
-    }
+    };
+
     // Render overview view
     return $this->renderer->render($response, 'overview.phtml', $args);
 });
