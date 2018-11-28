@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title>CV maker</title>
+    <link rel="stylesheet" href="css/red.css" />
+    <script src="js/datepicker.js"></script>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -12,8 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="css/red.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
 </head>
 
 <body class="grey lighten-3">
@@ -129,11 +130,11 @@
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="birthdate" id="Birth" type="Date" class="validate">
+                                                <input name="birthdate" id="Birth" type="text" class="datepicker" >
                                                 <label for="Birth">Birthdate:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input name="birthplace" id="Birthplace" type="text" class="validate">
+                                                <input name="birthplace" id="Birthplace" type="text">
                                                 <label for="Birthplace">Birthplace:</label>
                                             </div>
                                         </div>
@@ -183,11 +184,11 @@
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="fromEdu" id="StartEdu" type="date" class="validate">
+                                                <input name="fromEdu" id="StartEdu" type="text" class="datepicker">
                                                 <label for="StartEdu">From:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input name="untilEdu" id="EndEdu" type="date" class="validate">
+                                                <input name="untilEdu" id="EndEdu" type="text" class="datepicker"   class="validate" >
                                                 <label for="EndEdu">Until:</label>
                                             </div>
                                         </div>
@@ -243,11 +244,11 @@
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="fromExp" id="StartExp" type="date" class="validate">
+                                                <input name="fromExp" id="StartExp" type="text" class="datepicker" class="validate">
                                                 <label for="StartExp">From:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input name="untilExp" id="EndExp" type="date" class="validate">
+                                                <input name="untilExp" id="EndExp" type="text" class="datepicker" class="validate">
                                                 <label for="EndExp">Until:</label>
                                             </div>
                                         </div>
