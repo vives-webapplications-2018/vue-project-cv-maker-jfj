@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/collapsible.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="css/red.css" />
 </head>
 
@@ -28,8 +28,9 @@
             </ul>
         </div>
     </nav>
-    <div class="container" style="margin-top:30px;">
-        <div class="container">
+    <div class="container" style="margin-top:30px;" >
+        <div id="app" class="container">
+            <form action="">
             <ul class="collapsible">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">account_circle</i>Personal information</div>
@@ -98,38 +99,43 @@
                     <div class="col s12 m12">
                                 <div class="card">
                                     <div class="card-content">
+                                    <span class="card-title">
+                                            <h4>Education</h4>
+                                    </span>
+                                    <div v-for="i in 3">
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input value =<?= $education ?> name="education" id="Education" type="text" class="validate">
+                                                <input value =<?= $education ?> name="education[]" id="Education" type="text" class="validate">
                                                 <label for="Education">Education:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input value =<?= $placeEdu ?> name="placeEdu" id="Place" type="text" class="validate">
+                                                <input value =<?= $placeEdu ?> name="placeEdu[]" id="Place" type="text" class="validate">
                                                 <label for="Place">Place:</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input value =<?= $institute ?> name="institute" id="Institution" type="text" class="validate">
+                                                <input value =<?= $institute ?> name="institute[]" id="Institution" type="text" class="validate">
                                                 <label for="Institution">Educational institution:</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input value =<?= $fromEdu ?> name="fromEdu" id="StartEdu" type="date" class="validate">
+                                                <input value =<?= $fromEdu ?> name="fromEdu[]" id="StartEdu" type="date" class="validate">
                                                 <label for="StartEdu">From:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input value =<?= $untilEdu ?> name="untilEdu" id="EndEdu" type="date" class="validate">
+                                                <input value =<?= $untilEdu ?> name="untilEdu[]" id="EndEdu" type="date" class="validate">
                                                 <label for="EndEdu">Until:</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <textarea value =<?= $informationEdu ?> name="informationEdu" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                                <textarea value =<?= $informationEdu ?> name="informationEdu[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
                                                 <label for="AdditionalInfoEdu">Additional information:</label>
                                             </div>
                                         </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -209,6 +215,7 @@
                     </div>
                 </li>
             </ul>
+            </form>
         </div>
     </div>
     <footer class="page-footer light-blue darken-4">
@@ -241,3 +248,6 @@
                 </div>
             </div>
     </footer>
+    <script src="js/overview.js"></script>
+</body>
+</html>

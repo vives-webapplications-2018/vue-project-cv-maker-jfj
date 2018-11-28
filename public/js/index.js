@@ -3,7 +3,8 @@
 const app = new Vue({
   el: '#app',
   data: {
-    show: 1
+    show: 1,
+    count: 3
   },
   methods: {
     incrementStep() {
