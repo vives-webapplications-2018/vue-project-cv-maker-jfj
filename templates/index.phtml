@@ -330,24 +330,24 @@
                                         <div v-for="i in countComp">
                                                 <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="computerskill" id="computerskill" type="text" class="validate">
+                                                <input name="computerskill[]" id="computerskill" type="text" class="validate">
                                                 <label for="computerskill">Skill:</label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="computerlevel" type="radio" />
+                                                    <input name="computerlevel[]" type="radio" />
                                                     <span>Very Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="computerlevel" type="radio" />
+                                                    <input name="computerlevel[]" type="radio" />
                                                     <span>Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="computerlevel" type="radio" />
+                                                    <input name="computerlevel[]" type="radio" />
                                                     <span>Normal</span>
                                                 </label>
                                             </div>
@@ -415,31 +415,46 @@
                                         <span class="card-title">
                                             <h4>Other skills</h4>
                                         </span>
+                                        <div v-for="i in countOth">
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="otherskill" id="otherskill" type="text" class="validate">
+                                                <input name="otherskill[]" id="otherskill" type="text" class="validate">
                                                 <label for="otherskill">Skill:</label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="otherlevel" type="radio" />
+                                                    <input name="otherlevel[]" type="radio" />
                                                     <span>Very Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="otherlevel" type="radio" />
+                                                    <input name="otherlevel[]" type="radio" />
                                                     <span>Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="otherlevel" type="radio" />
+                                                    <input name="otherlevel[]" type="radio" />
                                                     <span>Normal</span>
                                                 </label>
-                                            </div>
+                                            </div> 
                                         </div>
-                                    </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="input-field col s3"> 
+                                            <button v-on:click.prevent="incrementCountOth" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                                <i class="material-icons center">add</i>
+                                            </button>      
+                                        </div>
+                                        <div class="input-field col s3"> 
+                                            <button v-on:click.prevent="decrementCountOth" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                                <i class="material-icons center">delete</i>
+                                            </button>
+                                        </div>
+                                        </div>
+                                        </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">

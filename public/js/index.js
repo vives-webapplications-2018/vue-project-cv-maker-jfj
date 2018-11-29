@@ -5,7 +5,9 @@ const app = new Vue({
   data: {
     show: 1,
     countEdu: 1,
-    countExp: 1
+    countExp: 1,
+    countComp: 1,
+    countOth: 1
   },
   methods: {
     incrementStep() {
@@ -25,6 +27,18 @@ const app = new Vue({
     },
     decrementCountExp() {
       this.countExp--;
+    },
+    incrementCountComp() {
+      this.countComp++;
+    },
+    decrementCountComp() {
+      this.countComp--;
+    },
+    incrementCountOth() {
+      this.countOth++;
+    },
+    decrementCountOth() {
+      this.countOth--;
     }
 
   }
