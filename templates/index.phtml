@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title>CV maker</title>
+    <link rel="stylesheet" href="css/red.css" />
+    <script src="js/datepicker.js"></script>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -130,11 +132,11 @@
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="birthdate" id="Birth" type="Date" class="validate">
+                                                <input name="birthdate" id="Birth" type="text" class="datepicker" >
                                                 <label for="Birth">Birthdate:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input name="birthplace" id="Birthplace" type="text" class="validate">
+                                                <input name="birthplace" id="Birthplace" type="text">
                                                 <label for="Birthplace">Birthplace:</label>
                                             </div>
                                         </div>
@@ -267,11 +269,11 @@
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="fromExp" id="StartExp" type="date" class="validate">
+                                                <input name="fromExp" id="StartExp" type="text" class="datepicker" class="validate">
                                                 <label for="StartExp">From:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input name="untilExp" id="EndExp" type="date" class="validate">
+                                                <input name="untilExp" id="EndExp" type="text" class="datepicker" class="validate">
                                                 <label for="EndExp">Until:</label>
                                             </div>
                                         </div>
