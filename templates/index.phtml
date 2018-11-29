@@ -249,37 +249,37 @@
                                         </span>
                                         <ul class="collapsible">
                                                 <li class="active" v-for="i in countExp" >
-                                                    <div class="collapsible-header"><i class="material-icons">school</i>Experience</div>
+                                                    <div class="collapsible-header"><i class="material-icons">work</i>Experience</div>
                                                     <div class="collapsible-body">
                                                     <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="functionExp" id="Function" type="text" class="validate">
+                                                <input name="functionExp[]" id="Function" type="text" class="validate">
                                                 <label for="Funcion">Function:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input name="placeExp" id="Place" type="text" class="validate">
+                                                <input name="placeExp[]" id="Place" type="text" class="validate">
                                                 <label for="Place">Place:</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input name="employer" id="Employer" type="text" class="validate">
+                                                <input name="employer[]" id="Employer" type="text" class="validate">
                                                 <label for="Employer">Employer:</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="fromExp" id="StartExp" type="text" class="datepicker" class="validate">
+                                                <input name="fromExp[]" id="StartExp" type="text" class="datepicker" class="validate">
                                                 <label for="StartExp">From:</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <input name="untilExp" id="EndExp" type="text" class="datepicker" class="validate">
+                                                <input name="untilExp[]" id="EndExp" type="text" class="datepicker" class="validate">
                                                 <label for="EndExp">Until:</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <textarea name="informationExp" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                                <textarea name="informationExp[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
                                                 <label for="Postal">Additional information:</label>
                                             </div>
                                         </div>
@@ -327,7 +327,8 @@
                                         <span class="card-title">
                                             <h4>Computer skills</h4>
                                         </span>
-                                        <div class="row">
+                                        <div v-for="i in countComp">
+                                                <div class="row">
                                             <div class="input-field col s6">
                                                 <input name="computerskill" id="computerskill" type="text" class="validate">
                                                 <label for="computerskill">Skill:</label>
@@ -351,6 +352,20 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="input-field col s3"> 
+                                            <button v-on:click.prevent="incrementCountComp" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                                <i class="material-icons center">add</i>
+                                            </button>      
+                                        </div>
+                                        <div class="input-field col s3"> 
+                                            <button v-on:click.prevent="decrementCountComp" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                                <i class="material-icons center">delete</i>
+                                            </button> 
+                                        </div>
+                                        </div>
+                                            
                                         <div class="row">
                                             <div class="col s12">
                                                 <h5>Add your GitHub account</h5>

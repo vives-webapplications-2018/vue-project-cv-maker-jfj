@@ -105,30 +105,30 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     
     $educationarray = array();
     $educations= $request->getParam('education');
-    $places = $request->getParam('placeEdu');
+    $placeEdus = $request->getParam('placeEdu');
     $institutes = $request->getParam('institute');
     $fromEdus = $request->getParam('fromEdu');
     $untilEdus = $request->getParam('untilEdu');
-    $informations = $request->getParam('informationEdu');
+    $informationEdus = $request->getParam('informationEdu');
 
     for($i=0;$i<count($educations);$i++){
         $arr['educations'] = $educations[$i];
-        $arr['places'] = $places[$i];
+        $arr['placeEdus'] = $placeEdus[$i];
         $arr['institutes'] = $institutes[$i];
         $arr['fromEdus'] = $fromEdus[$i];
         $arr['untilEdus'] = $untilEdus[$i];
-        $arr['informations'] = $informations[$i];
+        $arr['informationEdus'] = $informationEdus[$i];
         array_push($educationarray,$arr);
     }
 
     foreach($educationarray as $key => $value){ 
         $education = new Education();
         $education->education = $value['educations'];
-        $education->place = $value['places'];
+        $education->place = $value['placeEdus'];
         $education->institute = $value['institutes'];
         $education->fromEdu = $value['fromEdus'];
         $education->untilEdu = $value['untilEdus'];
-        $education->information = $value['informations'];
+        $education->information = $value['informationEdus'];
         $education->users_id = $user->id;
         $education->save();
         $args['education'][$i] = $education->education;
@@ -136,25 +136,52 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
         $args['institute'] = $education->institute;
         $args['fromEdu'] = $education->fromEdu;
         $args['untilEdu'] = $education->untilEdu;
-        $args['informationEdu'] = $education->informationEdu;
+        $args['informationEdus'] = $education->informationEdus;
     }
     
+    $experiencearray = array();
+    $experiences= $request->getParam('functionExp');
+    $placeExps = $request->getParam('placeExp');
+    $employers = $request->getParam('employer');
+    $fromExps = $request->getParam('fromExp');
+    $untilExps = $request->getParam('untilExp');
+    $informationExps = $request->getParam('informationExp');
 
-    $experience = new Experience();
-    $experience->functionExp = $request->getParam('functionExp');
-    $args['functionExp'] = $experience->functionExp;
-    $experience->place = $request->getParam('placeExp');
-    $args['placeExp'] = $experience->place;
-    $experience->employer = $request->getParam('employer');
-    $args['employer'] = $experience->employer;
-    $experience->fromExp = $request->getParam('fromExp');
-    $args['fromExp'] = $experience->fromExp;
-    $experience->untilExp = $request->getParam('untilExp');
-    $args['untilExp'] = $experience->untilExp;
-    $experience->information = $request->getParam('informationExp');
-    $args['informationExp'] = $experience->informationExp;
-    $experience->users_id = $user->id;
-    $experience->save();
+    for($i=0;$i<count($experiences);$i++){
+        $arr['experiences'] = $experiences[$i];
+        $arr['placeExps'] = $placeExps[$i];
+        $arr['employers'] = $employers[$i];
+        $arr['fromExps'] = $fromExps[$i];
+        $arr['untilExps'] = $untilEdus[$i];
+        $arr['informationExps'] = $informationExps[$i];
+        array_push($experiencearray,$arr);
+    }
+
+    foreach($experiencearray as $key => $value){ 
+        $experience = new Experience();
+        $experience->functionExp = $value['experiences'];
+        $experience->place = $value['placeExps'];
+        $experience->employer = $value['employers'];
+        $experience->fromExp = $value['fromExps'];
+        $experience->untilExp = $value['untilExps'];
+        $experience->information = $value['informationExps'];
+        $experience->users_id = $user->id;
+        $experience->save();
+        $args['functionExp'] = $experience->functionExp;
+        $args['placeExp'] = $experience->place;
+        $args['employer'] = $experience->employer;
+        $args['fromExp'] = $experience->fromExp;
+        $args['untilExp'] = $experience->untilExp;
+        $args['informationExp'] = $experience->informationExp;
+
+    }
+
+
+
+
+
+
+
 
     $computerskill = new Computerskill();
     $computerskill->skill = $request->getParam('computerskill');
