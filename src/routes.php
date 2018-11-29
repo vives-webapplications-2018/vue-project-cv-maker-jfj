@@ -120,6 +120,7 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
         $arr['informations'] = $informations[$i];
         array_push($educationarray,$arr);
     }
+
     foreach($educationarray as $key => $value){ 
         $education = new Education();
         $education->education = $value['educations'];
@@ -130,7 +131,7 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
         $education->information = $value['informations'];
         $education->users_id = $user->id;
         $education->save();
-        $args['education'] = $education->education;
+        $args['education'][$i] = $education->education;
         $args['placeEdu'] = $education->place;
         $args['institute'] = $education->institute;
         $args['fromEdu'] = $education->fromEdu;
