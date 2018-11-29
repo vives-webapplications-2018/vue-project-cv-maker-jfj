@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="js/collapsible.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="css/red.css" />
 </head>
@@ -165,40 +166,57 @@
                                         <span class="card-title">
                                             <h4>Education</h4>
                                         </span>
-                                        <div v-for="i in 3">
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="education[]" id="Education" type="text" class="validate">
-                                                <label for="Education">Education:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="placeEdu[]" id="Place" type="text" class="validate">
-                                                <label for="Place">Place:</label>
-                                            </div>
+                                            <ul class="collapsible">
+                                                <li class="active" v-for="i in countEdu" >
+                                                    <div class="collapsible-header"><i class="material-icons">school</i>Education</div>
+                                                    <div class="collapsible-body">
+                                                        <div class="row">
+                                                            <div class="input-field col s6">
+                                                                <input name="education[]" id="Education" type="text" class="validate">
+                                                                <label for="Education">Education:</label>
+                                                            </div>
+                                                            <div class="input-field col s6">
+                                                                <input name="placeEdu[]" id="Place" type="text" class="validate">
+                                                                <label for="Place">Place:</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="input-field col s12">
+                                                                <input name="institute[]" id="Institution" type="text" class="validate">
+                                                                <label for="Institution">Educational institution:</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="input-field col s6">
+                                                                <input name="fromEdu[]" id="StartEdu" type="date" class="validate">
+                                                                <label for="StartEdu">From:</label>
+                                                            </div>
+                                                            <div class="input-field col s6">
+                                                                <input name="untilEdu[]" id="EndEdu" type="date" class="validate">
+                                                                <label for="EndEdu">Until:</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="input-field col s12">
+                                                                <textarea name="informationEdu[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                                                <label for="Postal">Additional information:</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                    <div class="row">
+                                        <div class="input-field col s3"> 
+                                            <button v-on:click.prevent="incrementCountEdu" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                                <i class="material-icons center">add</i>
+                                            </button>      
                                         </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input name="institute[]" id="Institution" type="text" class="validate">
-                                                <label for="Institution">Educational institution:</label>
-                                            </div>
+                                        <div class="input-field col s3"> 
+                                            <button v-on:click.prevent="decrementCountEdu" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                                <i class="material-icons center">delete</i>
+                                            </button> 
                                         </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="fromEdu[]" id="StartEdu" type="date" class="validate">
-                                                <label for="StartEdu">From:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="untilEdu[]" id="EndEdu" type="date" class="validate">
-                                                <label for="EndEdu">Until:</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <textarea name="informationEdu[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
-                                                <label for="Postal">Additional information:</label>
-                                            </div>
-                                        </div>
-                                        </div>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -227,7 +245,11 @@
                                         <span class="card-title">
                                             <h4>Experience</h4>
                                         </span>
-                                        <div class="row">
+                                        <ul class="collapsible">
+                                                <li class="active" v-for="i in countExp" >
+                                                    <div class="collapsible-header"><i class="material-icons">school</i>Experience</div>
+                                                    <div class="collapsible-body">
+                                                    <div class="row">
                                             <div class="input-field col s6">
                                                 <input name="functionExp" id="Function" type="text" class="validate">
                                                 <label for="Funcion">Function:</label>
@@ -259,7 +281,23 @@
                                                 <label for="Postal">Additional information:</label>
                                             </div>
                                         </div>
+                                    </div>    
+                                                </li>
+                                            </ul>
+                                    <div class="row">
+                                        <div class="input-field col s3"> 
+                                            <button v-on:click.prevent="incrementCountExp" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                                <i class="material-icons center">add</i>
+                                            </button>      
+                                        </div>
+                                        <div class="input-field col s3"> 
+                                            <button v-on:click.prevent="decrementCountExp" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                                <i class="material-icons center">delete</i>
+                                            </button> 
+                                        </div>
                                     </div>
+                                    </div>
+                                        
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">
