@@ -7,16 +7,25 @@
    }
 
    .input-field input[type=text], .materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid black ;
+    border-bottom: 1px solid black;
     box-shadow: 0 0 0 0 black !important;
    }
+   
+   .input-field textarea + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: black !important;
+  }
+  
+    .input-field textarea, .materialize-textarea:focus:not([readonly]) {
+      border-bottom: 1px solid black;
+      box-shadow: 0 0 0 0 black !important;
+  }
 
    .input-field input[type=date] + label, .materialize-textarea:focus:not([readonly]) + label {
     color: black !important;
    }
 
    .input-field input[type=date], .materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid black ;
+    border-bottom: 1px solid black !important;
     box-shadow: 0 0 0 0 black !important;
    }
    
