@@ -30,186 +30,174 @@
             </ul>
         </div>
     </nav>
-
     <div style="margin-top:30px;" id="app">
         <form action="/cvs" method="post">
             <div class="container">
-
-                    <div class="container">
-                        <div v-show="show === 1" class="row">
-                            <div>
-                                <div class="card">
-                                    <div class="card-content">
-                                        <span class="card-title">
-                                            <h2>JFJ CV-maker</h2>
-                                        </span>
-                                        <h4>3 Steps to make your CV!</h4>
+                <div class="container">
+                    <div v-show="show === 1" class="row">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">
+                                    <h2>JFJ CV-maker</h2>
+                                </span>
+                                <h4>3 Steps to make your CV!</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col s4">
+                                    <div class="center promo promo-example" style="margin-top:50px">
+                                        <i class="large material-icons red-text">account_circle</i>
+                                        <h5 class="promo-caption" style="margin-top:50px">1. Personal information</h5>
+                                    </div>
+                                </div>
+                                <div class="col s4">
+                                    <div class="center promo promo-example" style="margin-top:50px">
+                                        <i class="large material-icons red-text">flash_on</i>
+                                        <h5 class="promo-caption" style="margin-top:50px">2. Skills</h5>
+                                    </div>
+                                </div>
+                                <div class="col s4">
+                                    <div class="center promo promo-example" style="margin-top:50px">
+                                        <i class="large material-icons red-text">cloud_download</i>
+                                        <h5 class="promo-caption" style="margin-top:50px">3. Get your CV!</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light red" type="submit" name="action">Get started
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-show="show === 2" class="row">
+                        <div class="progress red lighten-3">
+                            <div class="determinate red" style="width: 20%"></div>
+                        </div>
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title">
+                                        <h4>Personal information</h4>
+                                    </span>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input name="firstname" id="first_name" type="text" class="validate">
+                                            <label for="first_name">First name:</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input name="lastname" id="last_name" type="text" class="validate">
+                                            <label for="last_name">Last name:</label>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col s4">
-                                            <div class="center promo promo-example" style="margin-top:50px">
-                                                <i class="large material-icons red-text">account_circle</i>
-                                                <h5 class="promo-caption" style="margin-top:50px">1. Personal
-                                                    information</h5>
-                                            </div>
+                                        <div class="input-field col s6">
+                                            <input name="email" type="email" id="Email" class="validate">
+                                            <label for="Email">E-mail:</label>
+                                            <span class="helper-text" data-error="Invalid e-mail!" data-success="Valid e-mail."></span>
                                         </div>
-                                        <div class="col s4">
-                                            <div class="center promo promo-example" style="margin-top:50px">
-                                                <i class="large material-icons red-text">flash_on</i>
-                                                <h5 class="promo-caption" style="margin-top:50px">2. Skills</h5>
-                                            </div>
-                                        </div>
-                                        <div class="col s4">
-                                            <div class="center promo promo-example" style="margin-top:50px">
-                                                <i class="large material-icons red-text">cloud_download</i>
-                                                <h5 class="promo-caption" style="margin-top:50px">3. Get your CV!</h5>
-                                            </div>
+                                        <div class="input-field col s6">
+                                            <input name="phonenumber" id="Phone" type="text" class="validate">
+                                            <label for="Phone">Phonenumber:</label>
                                         </div>
                                     </div>
-                                    <div class="card-action">
-                                        <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light red"
-                                            type="submit" name="action">Get started
-                                            <i class="material-icons right">send</i>
-                                        </button>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input name="street" id="Street" type="text" class="validate">
+                                            <label for="Street">Streetname:</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input name="nr" id="House" type="text" class="validate">
+                                            <label for="House">Housenumber:</label>
+                                        </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input name="zip" id="Postal" type="text" class="validate">
+                                            <label for="Postal">Postal code:</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input name="city" id="City" type="text" class="validate">
+                                            <label for="City">City:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input name="birthdate" id="Birth" type="text" class="datepicker" >
+                                            <label for="Birth">Birthdate:</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input name="birthplace" id="Birthplace" type="text">
+                                            <label for="Birthplace">Birthplace:</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red">Next
+                                        <i class="material-icons right">send</i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="container">
-                        <div v-show="show === 2" class="row">
-                            <div class="progress red lighten-3">
-                                <div class="determinate red" style="width: 20%"></div>
-                            </div>
-                            <div class="col s12 m12">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <span class="card-title">
-                                            <h4>Personal information</h4>
-                                        </span>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="firstname" id="first_name" type="text" class="validate">
-                                                <label for="first_name">First name:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="lastname" id="last_name" type="text" class="validate">
-                                                <label for="last_name">Last name:</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="email" type="email" id="Email" class="validate">
-                                                <label for="Email">E-mail:</label>
-                                                <span class="helper-text" data-error="Invalid e-mail!" data-success="Valid e-mail."></span>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="phonenumber" id="Phone" type="text" class="validate">
-                                                <label for="Phone">Phonenumber:</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="street" id="Street" type="text" class="validate">
-                                                <label for="Street">Streetname:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="nr" id="House" type="text" class="validate">
-                                                <label for="House">Housenumber:</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="zip" id="Postal" type="text" class="validate">
-                                                <label for="Postal">Postal code:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="city" id="City" type="text" class="validate">
-                                                <label for="City">City:</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="birthdate" id="Birth" type="text" class="datepicker" >
-                                                <label for="Birth">Birthdate:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="birthplace" id="Birthplace" type="text">
-                                                <label for="Birthplace">Birthplace:</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red">Next
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div v-show="show === 3" class="row">
+                        <div class="progress red lighten-3">
+                            <div class="determinate red" style="width: 40%"></div>
                         </div>
-                    </div>
-                    <div class="container">
-                        <div v-show="show === 3" class="row">
-                            <div class="progress red lighten-3">
-                                <div class="determinate red" style="width: 40%"></div>
-                            </div>
-                            <div class="col s12 m12">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <span class="card-title">
-                                            <h4>Education</h4>
-                                        </span>
-                                            <ul class="collapsible">
-                                                <li class="active" v-for="i in countEdu" >
-                                                    <div class="collapsible-header"><i class="material-icons">school</i>Education</div>
-                                                    <div class="collapsible-body">
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input name="education[]" id="Education" type="text" class="validate">
-                                                                <label for="Education">Education:</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input name="placeEdu[]" id="Place" type="text" class="validate">
-                                                                <label for="Place">Place:</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s12">
-                                                                <input name="institute[]" id="Institution" type="text" class="validate">
-                                                                <label for="Institution">Educational institution:</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input name="fromEdu[]" id="StartEdu" type="text" class="datepicker" class="validate">
-                                                                <label for="StartEdu">From:</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input name="untilEdu[]" id="EndEdu" type="text" class="datepicker" class="validate">
-                                                                <label for="EndEdu">Until:</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s12">
-                                                                <textarea name="informationEdu[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
-                                                                <label for="Postal">Additional information:</label>
-                                                            </div>
-                                                        </div>
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title">
+                                        <h4>Education</h4>
+                                    </span>
+                                    <ul class="collapsible">
+                                        <li class="active" v-for="i in countEdu" >
+                                            <div class="collapsible-header"><i class="material-icons">school</i>Education</div>
+                                            <div class="collapsible-body">
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input name="education[]" id="Education" type="text" class="validate">
+                                                        <label for="Education">Education:</label>
                                                     </div>
-                                                </li>
-                                            </ul>
+                                                    <div class="input-field col s6">
+                                                        <input name="placeEdu[]" id="Place" type="text" class="validate">
+                                                        <label for="Place">Place:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input name="institute[]" id="Institution" type="text" class="validate">
+                                                        <label for="Institution">Educational institution:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input name="fromEdu[]" id="StartEdu" type="text" class="datepicker" class="validate">
+                                                        <label for="StartEdu">From:</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <input name="untilEdu[]" id="EndEdu" type="text" class="datepicker" class="validate">
+                                                        <label for="EndEdu">Until:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <textarea name="informationEdu[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                                        <label for="Postal">Additional information:</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                     <div class="row">
                                         <div class="input-field col s3"> 
-                                            <button v-on:click.prevent="incrementCountEdu" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                        <button v-on:click.prevent="incrementCountEdu" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">add</i>
                                             </button>      
                                         </div>
@@ -219,73 +207,71 @@
                                             </button> 
                                         </div>
                                     </div>
-                                    </div>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red">Next
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red">Next
+                                        <i class="material-icons right">send</i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div v-show="show === 4" class="row">
-                            <div class="progress red lighten-3">
-                                <div class="determinate red" style="width: 60%"></div>
-                            </div>
-                            <div class="col s12 m12">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <span class="card-title">
-                                            <h4>Experience</h4>
-                                        </span>
-                                        <ul class="collapsible">
-                                                <li class="active" v-for="i in countExp" >
-                                                    <div class="collapsible-header"><i class="material-icons">work</i>Experience</div>
-                                                    <div class="collapsible-body">
-                                                    <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="functionExp[]" id="Function" type="text" class="validate">
-                                                <label for="Funcion">Function:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="placeExp[]" id="Place" type="text" class="validate">
-                                                <label for="Place">Place:</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input name="employer[]" id="Employer" type="text" class="validate">
-                                                <label for="Employer">Employer:</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input name="fromExp[]" id="StartExp" class="datepicker" type="text" class="datepicker" class="validate">
-                                                <label for="StartExp">From:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="untilExp[]" id="EndExp" class="datepicker" type="text" class="datepicker" class="validate">
-                                                <label for="EndExp">Until:</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <textarea name="informationExp[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
-                                                <label for="Postal">Additional information:</label>
-                                            </div>
-                                        </div>
-                                    </div>    
-                                                </li>
-                                            </ul>
+                    <div v-show="show === 4" class="row">
+                        <div class="progress red lighten-3">
+                            <div class="determinate red" style="width: 60%"></div>
+                        </div>
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title">
+                                        <h4>Experience</h4>
+                                    </span>
+                                    <ul class="collapsible">
+                                        <li class="active" v-for="i in countExp" >
+                                            <div class="collapsible-header"><i class="material-icons">work</i>Experience</div>
+                                            <div class="collapsible-body">
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input name="functionExp[]" id="Function" type="text" class="validate">
+                                                        <label for="Funcion">Function:</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <input name="placeExp[]" id="Place" type="text" class="validate">
+                                                        <label for="Place">Place:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input name="employer[]" id="Employer" type="text" class="validate">
+                                                        <label for="Employer">Employer:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input name="fromExp[]" id="StartExp" class="datepicker" type="text" class="datepicker" class="validate">
+                                                        <label for="StartExp">From:</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <input name="untilExp[]" id="EndExp" class="datepicker" type="text" class="datepicker" class="validate">
+                                                        <label for="EndExp">Until:</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <textarea name="informationExp[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                                        <label for="Postal">Additional information:</label>
+                                                    </div>
+                                                </div>
+                                            </div>      
+                                        </li>
+                                    </ul>
                                     <div class="row">
                                         <div class="input-field col s3"> 
                                             <button v-on:click.prevent="incrementCountExp" class="btn waves-effect waves-light col s12 light-blue darken-2">
@@ -298,37 +284,34 @@
                                             </button> 
                                         </div>
                                     </div>
-                                    </div>
-                                        
+                                </div>      
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
+                                        <i class="material-icons right">send</i>
+                                    </button>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red">Next
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red">Next
+                                        <i class="material-icons right">send</i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div v-show="show === 5" class="row">
-                            <div class="progress red lighten-3">
-                                <div class="determinate red" style="width: 80%"></div>
-                            </div>
-                            <div class="col s12 m12">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <span class="card-title">
-                                            <h4>Computer skills</h4>
-                                        </span>
-                                        <div v-for="i in countComp">
-                                                <div class="row">
+                    <div v-show="show === 5" class="row">
+                        <div class="progress red lighten-3">
+                            <div class="determinate red" style="width: 80%"></div>
+                        </div>
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title">
+                                        <h4>Computer skills</h4>
+                                    </span>
+                                    <div v-for="i in countComp">
+                                        <div class="row">
                                             <div class="input-field col s6">
                                                 <input name="computerskill[]" id="computerskill" type="text" class="validate">
                                                 <label for="computerskill">Skill:</label>
@@ -352,8 +335,8 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        </div>
-                                        <div class="row">
+                                    </div>
+                                    <div class="row">
                                         <div class="input-field col s3"> 
                                             <button v-on:click.prevent="incrementCountComp" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">add</i>
@@ -364,58 +347,54 @@
                                                 <i class="material-icons center">delete</i>
                                             </button> 
                                         </div>
+                                    </div>   
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <h5>Add your GitHub account</h5>
+                                            <p>If you add your GitHub we will be able to add your programming
+                                                languages and
+                                                number of repositories to your CV.</p>
                                         </div>
-                                            
-                                        <div class="row">
-                                            <div class="col s12">
-                                                <h5>Add your GitHub account</h5>
-                                                <p>If you add your GitHub we will be able to add your programming
-                                                    languages and
-                                                    number of repositories to your CV.</p>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="githubUsername" id="githubUsername" type="text" class="validate">
-                                                <label for="githubUsername">GitHub username:</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input name="githubToken" id="githubtoken" type="password" class="validate">
-                                                <label for="githubtoken">GihtHub token:</label>
-                                            </div>
-                                            <div class="col s12">
-                                                <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/"
-                                                    target="_blank">Learn more about generating tokens.</a>
-                                            </div>
+                                        <div class="input-field col s6">
+                                            <input name="githubUsername" id="githubUsername" type="text" class="validate">
+                                            <label for="githubUsername">GitHub username:</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input name="githubToken" id="githubtoken" type="password" class="validate">
+                                            <label for="githubtoken">GihtHub token:</label>
+                                        </div>
+                                        <div class="col s12">
+                                            <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/"
+                                                target="_blank">Learn more about generating tokens.</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red">Next
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="incrementStep" class="btn waves-effect waves-light col s12 red">Next
+                                        <i class="material-icons right">send</i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div v-show="show === 6" class="row">
-                            <div class="progress">
-                                <div class="determinate red" style="width: 100%"></div>
-                            </div>
-                            <div class="col s12 m12">
-
-                                <div class="card">
-                                    <div class="card-content">
-                                        <span class="card-title">
-                                            <h4>Other skills</h4>
-                                        </span>
-                                        <div v-for="i in countOth">
+                    <div v-show="show === 6" class="row">
+                        <div class="progress">
+                            <div class="determinate red" style="width: 100%"></div>
+                        </div>
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title">
+                                        <h4>Other skills</h4>
+                                    </span>
+                                    <div v-for="i in countOth">
                                         <div class="row">
                                             <div class="input-field col s6">
                                                 <input name="otherskill[]" id="otherskill" type="text" class="validate">
@@ -440,8 +419,8 @@
                                                 </label>
                                             </div> 
                                         </div>
-                                        </div>
-                                        <div class="row">
+                                    </div>
+                                    <div class="row">
                                         <div class="input-field col s3"> 
                                             <button v-on:click.prevent="incrementCountOth" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">add</i>
@@ -452,26 +431,25 @@
                                                 <i class="material-icons center">delete</i>
                                             </button>
                                         </div>
-                                        </div>
-                                        </div>
-
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <button v-on:click="incrementStep" class="btn waves-effect waves-light col s12 red">Next
-                                            <i class="material-icons right">send</i>
-                                        </button>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                                <div class="input-field col s6">
+                                    <button v-on:click="incrementStep" class="btn waves-effect waves-light col s12 red">Next
+                                        <i class="material-icons right">send</i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </form>
         <footer class="page-footer light-blue darken-4">
             <div class="container">
@@ -503,7 +481,7 @@
                 </div>
             </div>
         </footer>
-        <script src="js/index.js"></script>
+    </div>
+    <script src="js/index.js"></script>
 </body>
-
 </html>
