@@ -9,6 +9,10 @@
    .input-field input[type=email] + label, .materialize-textarea:focus:not([readonly]) + label {
     color: black !important;
    }
+   .input-field input[type=email], .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid black;
+    box-shadow: 0 0 0 0 black !important;
+   }
 
    .input-field input[type=text], .materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid black;
@@ -92,6 +96,4 @@
 blockquote {
   border-left: 5px solid red;
 }
-.datepicker{
-  background-color: #CCC;
-}
+
