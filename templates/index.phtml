@@ -234,38 +234,38 @@
                                         <h4>Experience</h4>
                                     </span>
                                     <ul class="collapsible">
-                                        <li class="active" v-for="i in countExp" >
+                                        <li class="active" v-for="experience in experiences" >
                                             <div class="collapsible-header"><i class="material-icons">work</i>Experience</div>
                                             <div class="collapsible-body">
                                                 <div class="row">
                                                     <div class="input-field col s6">
-                                                        <input name="functionExp[]" id="Function" type="text" class="validate">
+                                                        <input v-model="experience.function" name="functionExp[]" id="Function" type="text" class="validate">
                                                         <label for="Funcion">Function:</label>
                                                     </div>
                                                     <div class="input-field col s6">
-                                                        <input name="placeExp[]" id="Place" type="text" class="validate">
+                                                        <input v-model="experience.placeExp" name="placeExp[]" id="Place" type="text" class="validate">
                                                         <label for="Place">Place:</label>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <input name="employer[]" id="Employer" type="text" class="validate">
+                                                        <input v-model="experience.employer" name="employer[]" id="Employer" type="text" class="validate">
                                                         <label for="Employer">Employer:</label>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="input-field col s6">
-                                                        <input name="fromExp[]" id="StartExp" class="datepicker" type="text" class="datepicker" class="validate">
+                                                        <input v-model="experience.fromExp" name="fromExp[]" id="StartExp" class="datepicker" type="text" class="datepicker" class="validate">
                                                         <label for="StartExp">From:</label>
                                                     </div>
                                                     <div class="input-field col s6">
-                                                        <input name="untilExp[]" id="EndExp" class="datepicker" type="text" class="datepicker" class="validate">
+                                                        <input v-model="experience.untilExp" name="untilExp[]" id="EndExp" class="datepicker" type="text" class="datepicker" class="validate">
                                                         <label for="EndExp">Until:</label>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <textarea name="informationExp[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
+                                                        <textarea v-model="experience.informationExp" name="informationExp[]" id="AdditionalInfoEdu" class="materialize-textarea"></textarea>
                                                         <label for="Postal">Additional information:</label>
                                                     </div>
                                                 </div>
@@ -274,12 +274,12 @@
                                     </ul>
                                     <div class="row">
                                         <div class="input-field col s3"> 
-                                            <button v-on:click.prevent="incrementCountExp" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                            <button v-on:click.prevent="addExperience" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">add</i>
                                             </button>      
                                         </div>
                                         <div class="input-field col s3"> 
-                                            <button v-on:click.prevent="decrementCountExp" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                            <button v-on:click.prevent="deleteExperience" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">delete</i>
                                             </button> 
                                         </div>
@@ -460,15 +460,15 @@
                                             <div class="collapsible-header"><i class="material-icons">account_circle</i>Personal information</div>
                                             <div class="collapsible-body">
                                                 <ul class="collection with-header">
-                                                    <li class="collection-header"><h4>{{firstname}} {{" "}} {{lastname}}</h4></li>
-                                                    <li class="collection-item"><b>Email:</b>{{" "}}{{email}}</li>
-                                                    <li class="collection-item"><b>Phonenumber:</b>{{" "}}{{phonenumber}}</li>
-                                                    <li class="collection-item"><b>Streetname:</b>{{" "}}{{streetname}}</li>
-                                                    <li class="collection-item"><b>Housenumber:</b>{{" "}}{{housenumber}} </li>
-                                                    <li class="collection-item"><b>Zip:</b>{{" "}}{{zip}}</li>
-                                                    <li class="collection-item"><b>City:</b>{{" "}}{{city}}</li>
-                                                    <li class="collection-item"><b>Birthdate:</b>{{" "}}{{birthdate}}</li>
-                                                    <li class="collection-item"><b>Birthplace:</b>{{" "}}{{birthplace}}</li>
+                                                    <li class="collection-header"><h4>{{firstname}} {{"   "}} {{lastname}}</h4></li>
+                                                    <li class="collection-item"><b>Email:</b>{{"   "}}{{email}}</li>
+                                                    <li class="collection-item"><b>Phonenumber:</b>{{"   "}}{{phonenumber}}</li>
+                                                    <li class="collection-item"><b>Streetname:</b>{{"   "}}{{streetname}}</li>
+                                                    <li class="collection-item"><b>Housenumber:</b>{{"   "}}{{housenumber}} </li>
+                                                    <li class="collection-item"><b>Zip:</b>{{"   "}}{{zip}}</li>
+                                                    <li class="collection-item"><b>City:</b>{{"   "}}{{city}}</li>
+                                                    <li class="collection-item"><b>Birthdate:</b>{{"   "}}{{birthdate}}</li>
+                                                    <li class="collection-item"><b>Birthplace:</b>{{"   "}}{{birthplace}}</li>
                                                 </ul>
                                             </div>
                                         </li>
@@ -478,11 +478,11 @@
                                                 <div class="row">
                                                     <ul class="collection with-header" v-for="education in educations">
                                                         <li class="collection-header"><h4>{{education.education}}</h4></li>
-                                                        <li class="collection-item"><b>Place:</b>{{education.placeEdu}}</li>
-                                                        <li class="collection-item"><b>Institution:</b>{{education.institution}}</li>
-                                                        <li class="collection-item"><b>From:</b>{{education.fromEdu}}</li>
-                                                        <li class="collection-item"><b>Until:</b>{{education.untilEdu}}</li>
-                                                        <li class="collection-item"><b>Additional information:</b>{{education.informationEdu}}</li>
+                                                        <li class="collection-item"><b>Place:</b>{{"   "}}{{education.placeEdu}}</li>
+                                                        <li class="collection-item"><b>Institute:</b>{{"   "}}{{education.institute}}</li>
+                                                        <li class="collection-item"><b>From:</b>{{"   "}}{{education.fromEdu}}</li>
+                                                        <li class="collection-item"><b>Until:</b>{{"   "}}{{education.untilEdu}}</li>
+                                                        <li class="collection-item"><b>Additional information:</b>{{"   "}}{{education.informationEdu}}</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -490,6 +490,16 @@
                                         <li>
                                             <div class="collapsible-header"><i class="material-icons">work</i>Experiences</div>
                                             <div class="collapsible-body">
+                                            <div class="row">
+                                                    <ul class="collection with-header" v-for="experience in experiences">
+                                                        <li class="collection-header"><h4>{{experience.function}}</h4></li>
+                                                        <li class="collection-item"><b>Place:</b>{{" "}}{{experience.placeExp}}</li>
+                                                        <li class="collection-item"><b>Employer:</b>{{" "}}{{experience.employer}}</li>
+                                                        <li class="collection-item"><b>From:</b>{{" "}}{{experience.fromExp}}</li>
+                                                        <li class="collection-item"><b>Until:</b>{{" "}}{{experience.untilExp}}</li>
+                                                        <li class="collection-item"><b>Additional information:</b>{{experience.informationExp}}</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </li>
                                         <li>
