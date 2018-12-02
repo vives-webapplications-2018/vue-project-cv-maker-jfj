@@ -17,7 +17,8 @@ const app = new Vue({
     countComp: 1,
     countOth: 1,
     educations: [{education:'',placeEdu:'',institute:'',fromEdu:'',untilEdu:'',informationEdu:''}],
-    experiences: [{function:'',placeExp:'',employer:'',fromExp:'',untilExp:'',informationExp:''}]
+    experiences: [{function:'',placeExp:'',employer:'',fromExp:'',untilExp:'',informationExp:''}],
+    computerskills: [{computerskill:'',computerlevel:''}]
 
   },
   methods: {
@@ -32,6 +33,12 @@ const app = new Vue({
     },
     deleteExperience () {
       this.experiences.pop({function:'',placeExp:'',employer:'',fromExp:'',untilExp:'',informationExp:''});
+    },
+    addComputerskill: function () {
+      this.computerskills.push({computerskill:'',computerlevel:''});
+    },
+    deleteComputerskill () {
+      this.computerskills.pop({computerskill:'',computerlevel:''});
     },
     incrementStep() {
       this.show++;

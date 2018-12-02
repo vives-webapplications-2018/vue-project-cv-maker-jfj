@@ -310,27 +310,27 @@
                                     <span class="card-title">
                                         <h4>Computer skills</h4>
                                     </span>
-                                    <div v-for="i in countComp">
+                                    <div  v-for="computerskill in computerskills">
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="computerskill[]" id="computerskill" type="text" class="validate">
+                                                <input v-model="computerskill.computerskill" name="computerskill[]" id="computerskill" type="text" class="validate">
                                                 <label for="computerskill">Skill:</label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="computerlevel[]" type="radio" />
+                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" />
                                                     <span>Very Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="computerlevel[]" type="radio" />
+                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" />
                                                     <span>Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="computerlevel[]" type="radio" />
+                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" />
                                                     <span>Normal</span>
                                                 </label>
                                             </div>
@@ -338,12 +338,12 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s3"> 
-                                            <button v-on:click.prevent="incrementCountComp" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                            <button v-on:click.prevent="addComputerskill" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">add</i>
                                             </button>      
                                         </div>
                                         <div class="input-field col s3"> 
-                                            <button v-on:click.prevent="decrementCountComp" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                            <button v-on:click.prevent="deleteComputerskill" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">delete</i>
                                             </button> 
                                         </div>
@@ -490,7 +490,7 @@
                                         <li>
                                             <div class="collapsible-header"><i class="material-icons">work</i>Experiences</div>
                                             <div class="collapsible-body">
-                                            <div class="row">
+                                                <div class="row">
                                                     <ul class="collection with-header" v-for="experience in experiences">
                                                         <li class="collection-header"><h4>{{experience.function}}</h4></li>
                                                         <li class="collection-item"><b>Place:</b>{{" "}}{{experience.placeExp}}</li>
@@ -505,6 +505,12 @@
                                         <li>
                                             <div class="collapsible-header"><i class="material-icons">laptop</i>Computer skills</div>
                                             <div class="collapsible-body">
+                                                <div class="row">
+                                                    <ul class="collection with-header" v-for="computerskill in computerskills">
+                                                        <li class="collection-header"><h4>{{computerskill.computerskill}}</h4></li>
+                                                        <li class="collection-item"><b>Level:</b>{{" "}}{{computerskill.computerlevel}}</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </li>
                                         <li>
