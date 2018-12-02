@@ -394,27 +394,27 @@
                                     <span class="card-title">
                                         <h4>Other skills</h4>
                                     </span>
-                                    <div v-for="i in countOth">
+                                    <div v-for="otherskill in otherskills">
                                         <div class="row">
                                             <div class="input-field col s6">
-                                                <input name="otherskill[]" id="otherskill" type="text" class="validate">
+                                                <input v-model="otherskill.otherskill" name="otherskill[]" id="otherskill" type="text" class="validate">
                                                 <label for="otherskill">Skill:</label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="otherlevel[]" type="radio" />
+                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" />
                                                     <span>Very Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="otherlevel[]" type="radio" />
+                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" />
                                                     <span>Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input name="otherlevel[]" type="radio" />
+                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" />
                                                     <span>Normal</span>
                                                 </label>
                                             </div> 
@@ -422,12 +422,12 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s3"> 
-                                            <button v-on:click.prevent="incrementCountOth" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                            <button v-on:click.prevent="addOtherskill" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">add</i>
                                             </button>      
                                         </div>
                                         <div class="input-field col s3"> 
-                                            <button v-on:click.prevent="decrementCountOth" class="btn waves-effect waves-light col s12 light-blue darken-2">
+                                            <button v-on:click.prevent="deleteOtherskill" class="btn waves-effect waves-light col s12 light-blue darken-2">
                                                 <i class="material-icons center">delete</i>
                                             </button>
                                         </div>
@@ -508,7 +508,7 @@
                                                 <div class="row">
                                                     <ul class="collection with-header" v-for="computerskill in computerskills">
                                                         <li class="collection-header"><h4>{{computerskill.computerskill}}</h4></li>
-                                                        <li class="collection-item"><b>Level:</b>{{" "}}{{computerskill.computerlevel}}</li>
+                                                        <li class="collection-item"><b>Level:</b>{{"   "}}{{computerskill.computerlevel}}</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -516,6 +516,12 @@
                                         <li>
                                             <div class="collapsible-header"><i class="material-icons">grade</i>Other skills</div>
                                             <div class="collapsible-body">
+                                                <div class="row">
+                                                    <ul class="collection with-header" v-for="otherskill in otherskills">
+                                                        <li class="collection-header"><h4>{{otherskill.otherskill}}</h4></li>
+                                                        <li class="collection-item"><b>Level:</b>{{"   "}}{{otherskill.otherlevel}}</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </li>
                                     </ul>
