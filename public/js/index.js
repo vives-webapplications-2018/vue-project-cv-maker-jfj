@@ -1,4 +1,12 @@
-/*jshint esversion: 6 */
+Vue.component('education-item', {
+  template: '\
+            <li>\
+              {{title}}\
+            </li>\
+            ',
+  props: ['title']
+})
+
 
 const app = new Vue({
   el: '#app',
@@ -7,9 +15,17 @@ const app = new Vue({
     countEdu: 1,
     countExp: 1,
     countComp: 1,
-    countOth: 1
+    countOth: 1,
+    educations: [{education:'',placeEdu:'',institute:'',fromEdu:'',untilEdu:'',informationEdu:''}]
+
   },
   methods: {
+    addEducation: function () {
+      this.educations.push({education:'',placeEdu:'',institute:'',fromEdu:'',untilEdu:'',informationEdu:''});
+    },
+    deleteEducation () {
+      this.educations.pop({education:'',placeEdu:'',institute:'',fromEdu:'',untilEdu:'',informationEdu:''});
+    },
     incrementStep() {
       this.show++;
     },
