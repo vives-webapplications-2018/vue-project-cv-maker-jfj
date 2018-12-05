@@ -98,6 +98,11 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $args['birthplace'] = $user->birthplace;
     $user->githubusername = $request->getParam('githubUsername');
     $user->githubtoken = $request->getParam('githubToken');
+
+    $string_to_encrypt=$githubToken;
+    $password="password";
+    $encrypted_string=openssl_encrypt($string_to_encrypt,"AES-128-ECB",$password);
+
     $user->addresses_id = $address->id;
     $user->save();
 
