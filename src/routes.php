@@ -230,7 +230,7 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     };
 
     // Render overview view
-    return $this->renderer->render($response, 'overview.phtml', $args);
+    return $this->renderer->render($response, 'cv.phtml', $args);
 });
 
 
