@@ -71,7 +71,8 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 
 $app->post('/cvs', function (Request $request, Response $response, array $args) {
     $this->logger->info("POST /cvs");
-
+    $test=array();
+    
     $address = new Address();
     $address->street = $request->getParam('street');
     $args['streetname'] = $address->street;
@@ -98,8 +99,13 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $args['birthplace'] = $user->birthplace;
     $user->githubusername = $request->getParam('githubUsername');
     $user->githubtoken = $request->getParam('githubToken');
+
+    $string_to_encrypt=$githubToken;
+    $password="password";
+    $encrypted_string=openssl_encrypt($string_to_encrypt,"AES-128-ECB",$password);
+
     $user->addresses_id = $address->id;
-    $user->save();
+    $user->save();    
 
 
     
@@ -216,6 +222,10 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
         $args['otherlevel'] = $otherskill->level;
     }
 
+
+    array_push($test,$user->firstname,$user->lastname,$user->email,$user->phonenumber,$user->birthdate,$user->birthplace);
+    array_push($test,$address->street,$address->nr,$address->zip,$address->city);
+    print_r($test);
 
     $github = new GitHub($user->githubusername,$user->githubtoken);
     $githubdata = $github->getPercentage($github->getData());
