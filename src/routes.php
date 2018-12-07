@@ -243,5 +243,12 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     };
 
     // Render overview view
+<<<<<<< HEAD
     return $this->renderer->render($response, 'overview.phtml', $args);
 });
+=======
+    return $this->renderer->render($response, 'cv.phtml', $args);
+});
+
+
+>>>>>>> 30a6dc67f27a19e00f1eeb456d388dc8994d93ce
