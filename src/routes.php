@@ -34,7 +34,7 @@ $app->get('/cv', function (Request $request, Response $response, array $args) {
     return $this->renderer->render($response, 'cv.phtml', $args);
 });
 
-$app->get('/createcv', function (Request $request, Response $response, array $args) {
+$app->get('/createpdf', function (Request $request, Response $response, array $args) {
     $api_endpoint = "https://selectpdf.com/api2/convert/";
     $key = '84e33984-bb8a-46c1-89ca-f1f184de52c9';
     $test_url = 'https://jop-todo.herokuapp.com/';
@@ -62,6 +62,17 @@ $app->get('/createcv', function (Request $request, Response $response, array $ar
     //return $this->renderer->render($response, 'index.phtml', $args);
 });
 
+$app->post('/createcv', function (Request $request, Response $response, array $args) {
+    $persoonlijkegegevens=array();
+    $opleidingen=array();
+    $werkervaringen=array();
+
+    array_push($persoonlijkegegevens,$user->firstname,$user->lastname,$user->email,$user->phonenumber,$user->birthdate,$user->birthplace);
+    array_push($persoonlijkegegevens,$address->street,$address->nr,$address->zip,$address->city);
+    array_push($opleidingen,$experiences[$i],$placeExps[$i]);
+    print_r($persoonlijkegegevens);    
+});
+
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     $this->logger->info("GET /");
 
@@ -71,7 +82,6 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 
 $app->post('/cvs', function (Request $request, Response $response, array $args) {
     $this->logger->info("POST /cvs");
-    $test=array();
     
     $address = new Address();
     $address->street = $request->getParam('street');
@@ -107,8 +117,6 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $user->addresses_id = $address->id;
     $user->save();    
 
-
-    
     $educationarray = array();
     $educations= $request->getParam('education');
     $placeEdus = $request->getParam('placeEdu');
@@ -222,11 +230,6 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
         $args['otherlevel'] = $otherskill->level;
     }
 
-
-    array_push($test,$user->firstname,$user->lastname,$user->email,$user->phonenumber,$user->birthdate,$user->birthplace);
-    array_push($test,$address->street,$address->nr,$address->zip,$address->city);
-    print_r($test);
-
     $github = new GitHub($user->githubusername,$user->githubtoken);
     $githubdata = $github->getPercentage($github->getData());
     $args['githubdata'] = $githubdata;
@@ -242,5 +245,3 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     // Render overview view
     return $this->renderer->render($response, 'overview.phtml', $args);
 });
-
-
