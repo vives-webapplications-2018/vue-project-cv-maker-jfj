@@ -10,28 +10,28 @@
 <body>
     <div>
         <aside class="left">
-            <h1 class="naam">Jurne Decadt</h1>
+            <h1 class="naam"><?=$firstname ?> <?=$lastname ?></h1>
 
             <h1>Personalia</h1>
 
             <h2>Naam</h2>
-            <p>Jurne Decadt</p>
+            <p><?=$firstname ?> <?=$lastname ?></p>
             
             <h2>Adres</h2>
-            <p>Meulebekestraat 42</p>
-            <p>8740 Pittem</p>
+            <p><?=$streetname ?> <?=$nr ?></p>
+            <p><?=$zip ?> <?=$city ?></p>
             
             <h2>Telefoonnummer</h2>
-            <p>0478/03 10 97</p>
+            <p><?=$phonenumber ?></p>
             
             <h2>E-mailadres</h2>
-            <p>jurne.decadt@gmail.com</p>
+            <p><?=$email ?></p>
             
             <h2>Geboortedatum</h2>
-            <p>25/08/1999</p>
+            <p><?=$birthdate ?></p>
             
-            <h2>Geslacht</h2>
-            <p>man</p>
+            <h2>Geboorteplaats</h2>
+            <p><?=$birthplace ?></p>
             
             <h2>Rijbewijs</h2>
             <p>B</p>
@@ -49,19 +49,24 @@
         <section>
             <h1>Opleidingen</h1>
             <hr>
-            <p class="datum">2018</p>
-            <p class="school">Vives</p>
-            
-            <p class="richting">ICT</p>
+            <p class="datum"><?=$fromEdu ?> - <?=$untilEdu ?></p>
+            <p class="school"><?=$institute ?></p>
+            <p class="richting"><?=$education[1] ?></p>
+            <p>test: <?=$informationEdus[1] ?></p>
+
+            <p class="datum"><?=$fromEdu ?> - <?=$untilEdu ?></p>
+            <p class="school"><?=$institute ?></p>
+            <p class="richting"><?=$education[2] ?></p>
+            <p><?=$informationEdus ?></p>
 
         </section>
         <section>
             <h1>Werkervaring</h1>
             <hr>
-            <p class="datum">2018</p>
-            <p class="werkplaats">PW</p>
-            <p class="job">mecanieker</p>
-            <p>liften plaatsen</p>
+            <p class="datum"><?=$fromExp ?> - <?=$untilExp ?></p>
+            <p class="werkplaats"><?=$placeExp ?></p>
+            <p class="job"><?=$functionExp ?></p>
+            <p><?=$informationExp ?></p>
         </section>
 
         <section>

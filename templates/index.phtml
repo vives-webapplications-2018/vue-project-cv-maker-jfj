@@ -123,7 +123,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input v-model="birthdate" name="birthdate" id="Birth" class="datepicker" type="text">
+                                            <input v-model="birthdate" name="birthdate" id="Birth" type="date">
                                             <label for="Birth">Birthdate:</label>
                                         </div>
                                         <div class="input-field col s6">
@@ -179,11 +179,11 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="input-field col s6">
-                                                        <input v-model="education.fromEdu" name="fromEdu[]" id="StartEdu" type="text" class="datepicker" class="validate">
+                                                        <input v-model="education.fromEdu" name="fromEdu[]" id="StartEdu" type="date" class="validate">
                                                         <label for="StartEdu">From:</label>
                                                     </div>
                                                     <div class="input-field col s6">
-                                                        <input v-model="education.untilEdu" name="untilEdu[]" id="EndEdu" type="text" class="datepicker" class="validate">
+                                                        <input v-model="education.untilEdu" name="untilEdu[]" id="EndEdu" type="date" class="validate">
                                                         <label for="EndEdu">Until:</label>
                                                     </div>
                                                 </div>
@@ -256,11 +256,11 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="input-field col s6">
-                                                        <input v-model="experience.fromExp" name="fromExp[]" id="StartExp" class="datepicker" type="text" class="datepicker" class="validate">
+                                                        <input v-model="experience.fromExp" name="fromExp[]" id="StartExp" type="date" class="validate">
                                                         <label for="StartExp">From:</label>
                                                     </div>
                                                     <div class="input-field col s6">
-                                                        <input v-model="experience.untilExp" name="untilExp[]" id="EndExp" class="datepicker" type="text" class="datepicker" class="validate">
+                                                        <input v-model="experience.untilExp" name="untilExp[]" id="EndExp" type="date" class="validate">
                                                         <label for="EndExp">Until:</label>
                                                     </div>
                                                 </div>
@@ -319,19 +319,20 @@
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" />
+                                                    <input v-model="computerskill.computerlevel1" name="computerlevel[]" type="checkbox"/>
                                                     <span>Very Good</span>
                                                 </label>
+                                                </p>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" />
+                                                    <input v-model="computerskill.computerlevel2" name="computerlevel[]" type="checkbox"/>
                                                     <span>Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" />
+                                                    <input v-model="computerskill.computerlevel3" name="computerlevel[]" type="checkbox"/>
                                                     <span>Normal</span>
                                                 </label>
                                             </div>
@@ -403,19 +404,19 @@
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" />
+                                                    <input v-model="otherskill.otherlevel1" name="otherlevel[]" type="checkbox" />
                                                     <span>Very Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" />
+                                                    <input v-model="otherskill.otherlevel2" name="otherlevel[]" type="checkbox" />
                                                     <span>Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" />
+                                                    <input v-model="otherskill.otherlevel3" name="otherlevel[]" type="checkbox" />
                                                     <span>Normal</span>
                                                 </label>
                                             </div> 
@@ -583,6 +584,6 @@
         </footer>
     </div>
     <script src="js/index.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/checkbox.js"></script>
 </body>
 </html>
