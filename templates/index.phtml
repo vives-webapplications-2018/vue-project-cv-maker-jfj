@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="js/collapsible.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="css/red.css" />
 </head>
@@ -356,11 +357,11 @@
                                                 number of repositories to your CV.</p>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input name="githubUsername" id="githubUsername" type="text" class="validate">
+                                            <input v-model="githubUsernameInput" name="githubUsername" id="githubUsername" type="text" class="validate">
                                             <label for="githubUsername">GitHub username:</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input name="githubToken" id="githubtoken" type="password" class="validate">
+                                            <input v-model="githubTokenInput" name="githubToken" id="githubtoken" type="password" class="validate">
                                             <label for="githubtoken">GihtHub token:</label>
                                         </div>
                                         <div class="col s12">
@@ -511,6 +512,12 @@
                                                         <li class="collection-item"><b>Level:</b>{{"   "}}{{computerskill.computerlevel}}</li>
                                                     </ul>
                                                 </div>
+                                                <div class="row">
+                                                    <ul class="collection with-header" v-for="(value,key) in githubjson">
+                                                        <li class="collection-header"><h4>{{key}}</h4></li>
+                                                        <li class="collection-item"><b>Level:</b>{{"   "}}{{value}}%</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </li>
                                         <li>
@@ -576,5 +583,6 @@
         </footer>
     </div>
     <script src="js/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

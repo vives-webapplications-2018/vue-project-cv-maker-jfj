@@ -225,8 +225,7 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
         $args['otherlevel'] = $otherskill->level;
     }
 
-    $github = new GitHub($user->githubusername,$user->githubtoken);
-    $githubdata = $github->getPercentage($github->getData());
+
     $args['githubdata'] = $githubdata;
     foreach($githubdata as $language=>$value)
     {
@@ -242,3 +241,11 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
 });
 
 
+$app->post('/getgithub', function(Request $request, Response $response, $args){
+    $githubusername = $request->getParam('githubUsername');
+    $githubtoken = $request->getParam('githubToken');
+    $github = new GitHub($githubusername,$githubtoken);
+    $githubdata = $github->getPercentage($github->getData());
+    $args['githubdata'] = $githubdata;
+    return $response->getBody()->write(json_encode($githubdata));
+});
