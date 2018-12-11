@@ -319,20 +319,20 @@
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="computerskill.computerlevel1" name="computerlevel[]" type="checkbox"/>
+                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" value="Very Good"/>
                                                     <span>Very Good</span>
                                                 </label>
                                                 </p>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="computerskill.computerlevel2" name="computerlevel[]" type="checkbox"/>
+                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" value="Good"/>
                                                     <span>Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="computerskill.computerlevel3" name="computerlevel[]" type="checkbox"/>
+                                                    <input v-model="computerskill.computerlevel" name="computerlevel[]" type="radio" value="Normal"/>
                                                     <span>Normal</span>
                                                 </label>
                                             </div>
@@ -404,19 +404,19 @@
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="otherskill.otherlevel1" name="otherlevel[]" type="checkbox" />
+                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" value="Very Good" />
                                                     <span>Very Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="otherskill.otherlevel2" name="otherlevel[]" type="checkbox" />
+                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" value="Good" />
                                                     <span>Good</span>
                                                 </label>
                                             </div>
                                             <div class="input-field col s2">
                                                 <label>
-                                                    <input v-model="otherskill.otherlevel3" name="otherlevel[]" type="checkbox" />
+                                                    <input v-model="otherskill.otherlevel" name="otherlevel[]" type="radio" value="Normal" />
                                                     <span>Normal</span>
                                                 </label>
                                             </div> 
@@ -542,7 +542,7 @@
                                     </button>
                                 </div>
                                 <div class="input-field col s6">
-                                    <button name="action" type="submit" v-on:click="incrementStep" class="btn waves-effect waves-light col s12 red">Next
+                                    <button name="action" type="submit" class="btn waves-effect waves-light col s12 red">Next
                                         <i class="material-icons right">send</i>
                                     </button>
                                 </div>
