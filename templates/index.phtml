@@ -130,10 +130,52 @@
                                             <input v-model="birthplace" name="birthplace" id="Birthplace" type="text">
                                             <label for="Birthplace">Birthplace:</label>
                                         </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <div class="input-field col s2">
+                                            <label>
+                                                <input v-model="gender" name="gender" type="radio"/>
+                                                <span>M</span>
+                                            </label>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <label>
+                                                    <input v-model="gender" name="gender" type="radio" />
+                                                    <span>V</span>
+                                                </label>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <label>
+                                                    <input v-model="gender" name="gender" type="radio" />
+                                                    <span>X</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="input-field col s6">
+                                                <select multiple>
+                                                <option value="" disabled>Choose your option</option>
+                                                <option value="1">Am</option>
+                                                <option value="2">A</option>
+                                                <option value="3">A1</option>
+                                                <option value="4">B</option>
+                                                <option value="5">C1</option>
+                                                <option value="6">C1E</option>
+                                                <option value="7">C</option>
+                                                <option value="8">CE</option>
+                                                <option value="9">D1</option>
+                                                <option value="10">D1E</option>
+                                                <option value="11">D</option>
+                                                <option value="12">De</option>
+                                                <option value="13">D1</option>
+                                                <option value="14">G</option>
+                                                </select>
+                                                <label>Select driver licences:</label>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                        </div>
+                        <div class="row">
                                 <div class="input-field col s6">
                                     <button v-on:click.prevent="decrementStep" class="btn waves-effect waves-light col s12 red">Back
                                         <i class="material-icons right">send</i>
@@ -420,6 +462,90 @@
                                                     <span>Normal</span>
                                                 </label>
                                             </div> 
+                                            <div class="input-field col s12">
+                                                <select multiple>
+                                                    <option value="" disabled>Choose your option</option>
+                                                    <option value="1">Akan</option>
+                                                    <option value="2">Amharic</option>
+                                                    <option value="3">Arabic</option>
+                                                    <option value="4">Assamese</option>
+                                                    <option value="5">Awadhi</option>
+                                                    <option value="6">Azerbaijani</option>
+                                                    <option value="7">Balochi</option>
+                                                    <option value="8">Belarusian</option>
+                                                    <option value="9">Bengali </option>
+                                                    <option value="10">Bhojpuri</option>
+                                                    <option value="11">Burmese</option>
+                                                    <option value="12">Cebuano</option>
+                                                    <option value="13">Chewa</option>
+                                                    <option value="14">Chhattisgarhi</option>
+                                                    <option value="15">Chittagonian</option>
+                                                    <option value="16">Czech</option>
+                                                    <option value="17">Deccan</option>
+                                                    <option value="18">Dhundhari</option>
+                                                    <option value="19">Dutch</option>
+                                                    <option value="20">Eastern Min </option>
+                                                    <option value="21">English</option>
+                                                    <option value="22">French</option>
+                                                    <option value="23">Fula</option>
+                                                    <option value="24">Gan</option>
+                                                    <option value="25">German</option>
+                                                    <option value="26">Greek</option>
+                                                    <option value="27">Gujarati</option>
+                                                    <option value="28">Haitian Creole</option>
+                                                    <option value="29">Hakka</option>
+                                                    <option value="30">Haryanvi</option>
+                                                    <option value="31">Hausa</option>
+                                                    <option value="32">Hiligaynon</option>
+                                                    <option value="33">Hmong</option>
+                                                    <option value="34">Hungarian</option>
+                                                    <option value="35">Ilocano</option>
+                                                    <option value="36">Italian</option>
+                                                    <option value="37">Japanese</option>
+                                                    <option value="38">Javanese</option>
+                                                    <option value="39">Jin</option>
+                                                    <option value="40">Kannada</option>
+                                                    <option value="41">Kazakh</option>
+                                                    <option value="42">Khmer</option>
+                                                    <option value="43">Kinyarwanda</option>
+                                                    <option value="44">Kirundi</option>
+                                                    <option value="45">Konkani</option>
+                                                    <option value="46">Korean</option>
+                                                    <option value="47">Kurdish</option>
+                                                    <option value="48">Madurese</option>
+                                                    <option value="49">Magahi</option>
+                                                    <option value="50">Maithili</option>
+                                                    <option value="51">Malagasy</option>
+                                                    <option value="52">Malay</option>
+                                                    <option value="53">Malayalam</option>
+                                                    <option value="54">Mandarin</option>
+                                                    <option value="55">Marathi</option>
+                                                    <option value="56">Marwari</option>
+                                                    <option value="57">Mossi</option>
+                                                    <option value="58">Nepali</option>
+                                                    <option value="59">Northern Min</option>
+                                                    <option value="60">Odia</option>
+                                                    <option value="61">Oromo</option>
+                                                    <option value="62">Pashto</option>
+                                                    <option value="63">Persian</option>
+                                                    <option value="64">Polish</option>
+                                                    <option value="65">Portuguese</option>
+                                                    <option value="66">Quechua</option>
+                                                    <option value="67">Romanian</option>
+                                                    <option value="68">Russian</option>
+                                                    <option value="69">Somali</option>
+                                                    <option value="70">Spanish</option>
+                                                    <option value="71">Swedish</option>
+                                                    <option value="72">Tamil</option>
+                                                    <option value="73">Thai</option>
+                                                    <option value="74">Turkish</option>
+                                                    <option value="75">Ukrainian</option>
+                                                    <option value="76">Urdu</option>
+                                                    <option value="77">Vietnamese</option>
+                                                    <option value="78">West Flemish</option>
+                                                </select>
+                                                <label>Select languages:</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
