@@ -107,6 +107,8 @@ $app->post('/cvs', function (Request $request, Response $response, array $args) 
     $args['birthdate'] = $user->birthdate;
     $user->birthplace = $request->getParam('birthplace');
     $args['birthplace'] = $user->birthplace;
+    $user->gender = $request->getParam('gender');
+    $args['gender'] = $user->gender;
     $user->githubusername = $request->getParam('githubUsername');
     $user->githubtoken = $request->getParam('githubToken');
     $user->addresses_id = $address->id;
