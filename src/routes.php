@@ -8,6 +8,8 @@ use \App\Models\Computerskill;
 use \App\Models\Education;
 use \App\Models\Experience;
 use \App\Models\Otherskill;
+use \App\Models\Driverlicence;
+use \App\Models\Language;
 use \App\lib\GitHub\GitHub;
 
 // Routes
