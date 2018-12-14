@@ -15,6 +15,7 @@ CREATE TABLE Users (
   id int(11) NOT NULL AUTO_INCREMENT,
   firstname varchar(32) NOT NULL,
   lastname varchar(32) NOT NULL,
+  gender ENUM('M','F','X') NOT NULL,
   email varchar(128) NOT NULL,
   phonenumber int(11) NULL,
   birthdate date NOT NULL,
@@ -56,6 +57,23 @@ CREATE TABLE Otherskills (
   PRIMARY KEY (id),
   FOREIGN KEY (users_id) REFERENCES Users(id)
 );
+
+CREATE TABLE languages (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  language varchar(32) NULL,
+  users_id int(11) NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (users_id) REFERENCES Users(id)
+);
+
+CREATE TABLE driverlicences (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  driverlicences varchar(10) NULL,
+  users_id int(11) NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (users_id) REFERENCES Users(id)
+);
+
 
 CREATE TABLE Experiences (
   id int(11) NOT NULL AUTO_INCREMENT,
