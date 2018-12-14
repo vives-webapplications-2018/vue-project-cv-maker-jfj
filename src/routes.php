@@ -63,14 +63,7 @@ $app->get('/createpdf', function (Request $request, Response $response, array $a
 });
 
 $app->post('/createcv', function (Request $request, Response $response, array $args) {
-    $persoonlijkegegevens=array();
-    $opleidingen=array();
-    $werkervaringen=array();
-
-    array_push($persoonlijkegegevens,$user->firstname,$user->lastname,$user->email,$user->phonenumber,$user->birthdate,$user->birthplace);
-    array_push($persoonlijkegegevens,$address->street,$address->nr,$address->zip,$address->city);
-    array_push($opleidingen,$experiences[$i],$placeExps[$i]);
-    print_r($persoonlijkegegevens);    
+     
 });
 
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {

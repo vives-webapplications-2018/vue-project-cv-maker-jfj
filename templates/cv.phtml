@@ -49,24 +49,33 @@
         <section>
             <h1>Opleidingen</h1>
             <hr>
-            <p class="datum"><?=$fromEdu ?> - <?=$untilEdu ?></p>
-            <p class="school"><?=$institute ?></p>
-            <p class="richting"><?=$education[1] ?></p>
-            <p>test: <?=$informationEdus[1] ?></p>
+            <p class="datum"><?=$fromEdu ?> tot <?=$untilEdu ?></p>
+            <p class="school"><?=$institute ?> &nbsp <?=$placeEdu ?></p>
+            <p class="richting"><?=$education[2] ?> <?
+                for($i=0;$i<10;$i++){
+                    echo $education[$i];
+                } 
+            ?></p>
+            <p class="uitleg">test: <?=$informationEdus ?></p>
 
-            <p class="datum"><?=$fromEdu ?> - <?=$untilEdu ?></p>
-            <p class="school"><?=$institute ?></p>
+            <p class="datum"><?=$fromEdu ?> tot <?=$untilEdu ?></p>
+            <p class="school"><?=$institute ?> &nbsp <?=$placeEdu ?></p>
             <p class="richting"><?=$education[2] ?></p>
-            <p><?=$informationEdus ?></p>
+            <p class="uitleg"></p>
 
         </section>
         <section>
             <h1>Werkervaring</h1>
             <hr>
-            <p class="datum"><?=$fromExp ?> - <?=$untilExp ?></p>
+            <p class="datum"><?=$fromExp ?> tot <?=$untilExp ?></p>
             <p class="werkplaats"><?=$placeExp ?></p>
             <p class="job"><?=$functionExp ?></p>
             <p><?=$informationExp ?></p>
+
+            <p class="datum"><?=$fromExp ?> tot <?=$untilExp ?></p>
+            <p class="werkplaats"><?=$placeExp ?></p>
+            <p class="job"><?=$functionExp ?></p>
+            <p><?=$informationExp ?> </p>
         </section>
 
         <section>
